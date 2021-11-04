@@ -1,4 +1,4 @@
-import {projectApi} from "../api/project-api";
+
 
 const initialState = {
     status: 'succeeded',
@@ -15,13 +15,13 @@ export const appReducer = (state = initialState, action) => {
     }
 }
 
-export const getCardsThunk = () => async (dispatch) => {
-    try {
-
-        const data = await projectApi.getCards()
-        console.log(data)
-
-    } catch (e) {
-        alert(e)
-    }
-}
+// export const getCardsThunk = () => async (dispatch) => {
+//     try {
+//
+//         const data = await projectApi.getCards()
+//         console.log(data)
+//
+//     } catch (e) {
+//         alert(e)
+//     }
+// }
