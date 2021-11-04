@@ -6,10 +6,9 @@ import s from './Preloader.module.css'
 export const Preloader = () => {
 
     return (
-    <div className={s.preloaderContainer}>
+        <div className={s.preloaderContainer}>
 
-            <img src={preload} alt={'no product'}/>
+            <img src={preload} alt={'preload...'}/>
 
-    </div> )
+        </div> )
 }
-
