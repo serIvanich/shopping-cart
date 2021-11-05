@@ -1,5 +1,6 @@
 import React from "react";
 import s from './Cards.module.css'
+import {Navigate} from "react-router-dom";
 
 export const Card = ({card}) => {
 const {name, category, price} = card
@@ -16,7 +17,7 @@ const {name, category, price} = card
                 <div style={{fontSize: "30px"}}>
                     $<div style={{fontSize: "60px", display: 'inline-block'}}>{price}</div>
                 </div>
-                <button>buy</button>
+                <button onClick={()=> <Navigate  to={'/modal-buy-cheapest'}/>}>buy</button>
             </div>
 
 

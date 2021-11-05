@@ -2,7 +2,8 @@ import React from "react";
 import './App.css';
 import {CardsPage} from "../component/cards/CardsPage";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import {Modal} from "../component/modal/Modal";
+import {ModalBuy} from "../component/modal/ModalBuy";
+import {ModalBuyCheapest} from "../component/modal/ModalBuyCheapest";
 
 const App = () => {
 
@@ -12,8 +13,8 @@ const App = () => {
             <div className="App">
                 <Routes>
                     <Route path='/' element={ <CardsPage/>}/>
-                    <Route path='/cards-page' element={<CardsPage/>}/>
-                    <Route path='/modal-buy' element={<Modal/>}/>
+                    <Route path='/modal-buy-cheapest' element={<ModalBuyCheapest/>}/>
+                    <Route path='/modal-buy' element={<ModalBuy/>}/>
 
                 </Routes>
             </div>
