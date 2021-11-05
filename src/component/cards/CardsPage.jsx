@@ -25,8 +25,8 @@ const cardsComponent = cards.map((c, i) => {
                 <div className={s.cardsBoxContainer}>
                     {cardsComponent.slice(0,6)}
                 </div>
-                <div>
-                    <NavLink to={'/modal-buy'} />
+                <div className={s.navContainer}>
+                    <NavLink  to={'/modal-buy'} >Buy cheapest</NavLink>
                 </div>
 
             </div>
