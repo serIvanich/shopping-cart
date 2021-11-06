@@ -1,32 +1,39 @@
 import {cardsApi} from "../../api/project-api";
+import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+import {appActions} from "../common-action/app";
 
-const GET_CARDS = 'cards/GET-CARDS'
 
-const initialState = {
-    cardsArr: null
+const getCards = createAsyncThunk('cards/getCards',
+    async (param, thunkAPI) => {
+        thunkAPI.dispatch(appActions.setAppStatus({status: 'loading'}))
+        try {
+            const data = await cardsApi.getCards()
+            thunkAPI.dispatch(appActions.setAppStatus({status: 'success'}))
+            return data
+        } catch (e) {
+            return alert(e)
+        }
+    })
+
+
+export const asyncActions = {
+    getCards: getCards,
 }
+const slice = createSlice({
+    name: 'cards',
+    initialState: {
+        cardsArr: [],
+    },
+    reducers: {},
+    extraReducers: (builder) => {
+        builder.addCase(getCards.fulfilled,
+            (state, action) => {
 
-export const cardsReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case GET_CARDS:
-            return {
-                ...state,
-                cardsArr:[...action.payload],
+                state.cardsArr.push(...action.payload)
             }
-        default:
-            return state
+        )
     }
-}
+})
 
-const getCards = (payload) => {
-    return {type: GET_CARDS, payload}
-}
+export default slice.reducer
 
-export const getCardsThunk = () => async (dispatch) => {
-    try {
-        const data = await cardsApi.getCards()
-        dispatch(getCards(data))
-    } catch (e) {
-        alert(e)
-    }
-}

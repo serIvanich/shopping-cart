@@ -1,14 +1,18 @@
 import React, {useState} from "react";
 import './App.css';
 import {CardsPage} from "../features/cards/CardsPage";
+import {useSelector} from "react-redux";
+import {Preloader} from "../common/preloader/Preloader";
 
 const App = () => {
+
  const [showModalBuy, setShowModalBuy] = useState(false)
  const [showModalBuyCheapest, setShowModalBuyCheapest] = useState(false)
 
     return (
 
         <div className="App">
+
 
             <CardsPage/>
         </div>

@@ -1,27 +1,29 @@
 import React, {useEffect} from "react";
 import {Card} from "./card/Card";
 import {useDispatch, useSelector} from "react-redux";
-import {getCardsThunk} from "./cards-reducer";
+
 import s from './CardsPage.module.css'
 import {NavLink} from "react-router-dom";
 import {Preloader} from "../../common/preloader/Preloader";
+import {asyncActions} from "./cards-reducer";
+import {useActions} from "../../utils/redux-utils";
 
 export const CardsPage = () => {
+    const {getCards} = useActions(asyncActions)
     const cards = useSelector((state) => state.cards.cardsArr)
-    const dispatch = useDispatch()
+    const status = useSelector(state => state.app.status)
     useEffect(() => {
-        dispatch(getCardsThunk())
-    }, [dispatch])
+        getCards()
+    }, [])
 
-    if (!cards) {
-        return <Preloader/>
-    }
+
 const cardsComponent = cards.map((c, i) => {
     return <Card key={i} card={c}/>
 })
     return (
 
             <div className={s.cardsPageContainer}>
+                {(!cards || status === 'loading') && <Preloader/>}
                 <div className={s.cardsBoxContainer}>
                     {cardsComponent.slice(0,6)}
                 </div>
