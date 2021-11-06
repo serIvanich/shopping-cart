@@ -1,5 +1,5 @@
 import React from "react";
-import s from './Cards.module.css'
+import s from '../CardsPage.module.css'
 import {Navigate} from "react-router-dom";
 
 export const Card = ({card}) => {

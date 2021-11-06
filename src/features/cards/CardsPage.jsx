@@ -1,8 +1,8 @@
 import React, {useEffect} from "react";
-import {Card} from "./Card";
+import {Card} from "./card/Card";
 import {useDispatch, useSelector} from "react-redux";
 import {getCardsThunk} from "./cards-reducer";
-import s from './Cards.module.css'
+import s from './CardsPage.module.css'
 import {NavLink} from "react-router-dom";
 import {Preloader} from "../../common/preloader/Preloader";
 

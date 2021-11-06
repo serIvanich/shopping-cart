@@ -1,14 +1,12 @@
-import thunk from 'redux-thunk';
-import {applyMiddleware, combineReducers, createStore} from "redux"
-import {appReducer} from "./app-reducer";
-import {cardsReducer} from "../component/cards/cards-reducer";
+import {configureStore} from "@reduxjs/toolkit";
+import {rootReducer} from "./reducers";
+import thunk from "redux-thunk";
 
-const reducers = combineReducers({
-    app: appReducer,
-    cards: cardsReducer,
+
+export const store = configureStore({
+    reducer: rootReducer,
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().prepend(thunk)
 })
-
-export const store = createStore(reducers, applyMiddleware(thunk));
 
 
 window.store = store;
