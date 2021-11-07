@@ -36,9 +36,7 @@
 
 .navContainer {
     display: table;
-}
 
-.navContainer a {
     width: 235px;
     height: 60px;
     text-decoration: none;
@@ -54,7 +52,7 @@
 
 }
 
-.navContainer a:hover {
+.navContainer:hover {
     background-color: #50DAA8;
     color: white;
 }

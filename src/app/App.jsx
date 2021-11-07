@@ -1,20 +1,31 @@
 import React, {useState} from "react";
 import './App.css';
 import {CardsPage} from "../features/cards/CardsPage";
-import {useSelector} from "react-redux";
-import {Preloader} from "../common/preloader/Preloader";
+import {ModalBuy} from "../features/modals/ModalBuy";
+import {useActions} from "../utils/redux-utils";
+import {asyncActions} from "../features/cards/cards-reducer";
 
 const App = () => {
+    const {getCards} = useActions(asyncActions)
+    const [currentCard, setCurrentCard] = useState({})
+    const [showModalBuy, setShowModalBuy] = useState(false)
+    const [showModalBuyCheapest, setShowModalBuyCheapest] = useState(false)
 
- const [showModalBuy, setShowModalBuy] = useState(false)
- const [showModalBuyCheapest, setShowModalBuyCheapest] = useState(false)
+
+
+    const onShowModal = (card) => {
+        setShowModalBuy(true)
+        setCurrentCard(card)
+    }
+
 
     return (
 
         <div className="App">
 
 
-            <CardsPage/>
+            <CardsPage onShowModal={onShowModal}/>
+            <ModalBuy currentCard={currentCard} show={showModalBuy} setShow={setShowModalBuy}/>
         </div>
 
     );
@@ -23,9 +34,14 @@ const App = () => {
 export default App;
 
 
-{/*<Routes>*/}
-{/*    <Route path='/' element={ <CardsPage/>}/>*/}
-{/*    <Route path='/modal-buy-cheapest' element={<ModalBuyCheapest/>}/>*/}
-{/*    <Route path='/modal-buy' element={<ModalBuy/>}/>*/}
+{/*<Routes>*/
+}
+{/*    <Route path='/' element={ <CardsPage/>}/>*/
+}
+{/*    <Route path='/modals-buy-cheapest' element={<ModalBuyCheapest/>}/>*/
+}
+{/*    <Route path='/modals-buy' element={<ModalBuy/>}/>*/
+}
 
-{/*</Routes>*/}
+{/*</Routes>*/
+}

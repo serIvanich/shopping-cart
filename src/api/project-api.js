@@ -7,7 +7,7 @@ const instance = axios.create({
 })
 export const cardsApi = {
     getCards() {
-        return instance.get ('b7d36eea-0b3f-414a-ba44-711b5f5e528e')
+        return instance.get('b7d36eea-0b3f-414a-ba44-711b5f5e528e')
             .then(res => res.data)
     }
 }

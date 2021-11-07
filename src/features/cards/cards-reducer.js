@@ -7,7 +7,9 @@ const getCards = createAsyncThunk('cards/getCards',
     async (param, thunkAPI) => {
         thunkAPI.dispatch(appActions.setAppStatus({status: 'loading'}))
         try {
+
             const data = await cardsApi.getCards()
+
             thunkAPI.dispatch(appActions.setAppStatus({status: 'success'}))
             return data
         } catch (e) {

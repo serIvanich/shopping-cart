@@ -1,11 +1,14 @@
 import React from "react";
 import s from '../CardsPage.module.css'
-import {Navigate} from "react-router-dom";
 
-export const Card = ({card}) => {
-const {name, category, price} = card
+
+export const Card = ({card, modalCard}) => {
+
+    const {name, category, price} = card
+
+
     return (
-        <div className={s.cardBox}>
+        <div className={`${s.cardBox}`} style={modalCard ? {border: 'none'} : {}}>
             <div style={{fontSize: "16px"}}>
                 {category}
             </div>
@@ -15,9 +18,12 @@ const {name, category, price} = card
             <div className={s.blockWithButton}>
 
                 <div style={{fontSize: "30px"}}>
-                    $<div style={{fontSize: "60px", display: 'inline-block'}}>{price}</div>
+                    $
+                    <div style={{fontSize: "60px", display: 'inline-block'}}>{price}</div>
                 </div>
-                <button onClick={()=> <Navigate  to={'/modal-buy-cheapest'}/>}>buy</button>
+                {!modalCard && <button onClick={() => {}}>
+                    buy
+                </button>}
             </div>
 
 

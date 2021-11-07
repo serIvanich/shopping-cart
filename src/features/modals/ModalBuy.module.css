@@ -1,0 +1,15 @@
+
+.settingModals {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+.settingModalsForm {
+    display: flex;
+    flex-direction: column;
+    align-content: space-evenly;
+    width: 60%;
+}
