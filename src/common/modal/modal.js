@@ -4,8 +4,7 @@ const Modal = (
     {
         enableBackground,
         backgroundStyle,
-        closeModalOnClick = () => {
-        },
+        closeModalOnClick ,
 
         width,
         height,
@@ -19,8 +18,6 @@ const Modal = (
 ) => {
     const top = `calc(50vh - ${height / 2}px)`;
     const left = `calc(50vw - ${width / 2}px)`;
-    const closeRight = `${parseInt(left) + 10} + px`
-    const closeTop = `${parseInt(top) + 10} + px`
 
     if (!show) return null;
 
@@ -52,14 +49,12 @@ const Modal = (
                     flexFlow: 'column',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    // padding: 20,
                     borderRadius: '24px',
                     background: '#FFFFFF',
                     zIndex: 21,
 
-                    ...modalStyle,
                 }}
-                onClick={modalOnClick}
+
             >
                 {children}
                 <div

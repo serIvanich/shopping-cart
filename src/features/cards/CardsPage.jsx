@@ -11,7 +11,7 @@ export const CardsPage = ({onShowModal}) => {
     const {getCards} = useActions(asyncActions)
     useEffect(() => {
         getCards()
-    }, [])
+    }, [getCards])
 
     const cards = useSelector((state) => state.cards.cardsArr)
     const cardsViews = cards.slice(0, 6)

@@ -8,7 +8,7 @@ const App = () => {
 
     const [currentCard, setCurrentCard] = useState({})
     const [showModalBuy, setShowModalBuy] = useState(false)
-
+debugger
     const onShowModal = (card) => {
         setCurrentCard(card)
         setShowModalBuy(true)
@@ -18,7 +18,7 @@ const App = () => {
 
         <div className="App">
 
-            <CardsPage onShowModal={onShowModal} setCurrentCard={setCurrentCard}/>
+            <CardsPage onShowModal={onShowModal}/>
             <ModalBuy currentCard={currentCard} show={showModalBuy} setShow={setShowModalBuy}/>
         </div>
 
