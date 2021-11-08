@@ -14,8 +14,9 @@ const App = () => {
 
 
     const onShowModal = (card) => {
-        setShowModalBuy(true)
         setCurrentCard(card)
+        setShowModalBuy(true)
+
     }
 
 
@@ -24,7 +25,7 @@ const App = () => {
         <div className="App">
 
 
-            <CardsPage onShowModal={onShowModal}/>
+            <CardsPage onShowModal={onShowModal} setCurrentCard={setCurrentCard}/>
             <ModalBuy currentCard={currentCard} show={showModalBuy} setShow={setShowModalBuy}/>
         </div>
 

@@ -14,22 +14,29 @@ export const CardsPage = ({onShowModal}) => {
     }, [])
 
     const cards = useSelector((state) => state.cards.cardsArr)
+    const cardsViews = cards.slice(0, 6)
     const status = useSelector(state => state.app.status)
+
+    const mapCards = cardsViews.map((c, i) => <Card key={i} card={c} onShowModal={onShowModal}/>)
+
+    const onClickButtonCheapest = () => {
+        let card = cardsViews.reduce((pr, c) => pr.price < c.price ? pr : c, {})
+        onShowModal(card)
+    }
 
     if (!cards) {
         return <Preloader/>
     }
-    const mapCards = cards.map((c, i) => <Card key={i} card={c}/>)
+
     return (
 
         <div className={s.cardsPageContainer}>
-            {(!cards || status === 'loading') && <Preloader/>}
+            {status === 'loading' && <Preloader/>}
             <div className={s.cardsBoxContainer}>
-                {mapCards.slice(0, 6)}
+                {mapCards}
             </div>
-            <div className={s.navContainer} onClick={() => onShowModal(cards[0])}>
-                <p>Buy cheapest</p>
-                {/*<NavLink  to={'/modals-buy'} ></NavLink>*/}
+            <div className={s.buttonContainer} onClick={onClickButtonCheapest}>
+                Buy cheapest
             </div>
 
         </div>

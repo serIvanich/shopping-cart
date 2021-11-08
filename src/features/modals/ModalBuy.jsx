@@ -44,7 +44,7 @@ export const ModalBuy = ({currentCard, show, setShow}) => {
         <div>
             <Modal
                 enableBackground={true}
-                backgroundOnClick={() => setShow(false)}
+                closeModalOnClick={() => setShow(false)}
                 width={384}
                 height={536}
                 show={show}

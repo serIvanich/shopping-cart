@@ -2,8 +2,7 @@ import React from "react";
 import Modal from "../../common/modal/modal";
 import {Card} from "../cards/card/Card";
 
-export const ModalBuy = ({currentCard, show, setShow}) => {
-
+export const ModalBuyMyForm = ({currentCard, show, setShow}) => {
 
 
     return (
@@ -15,13 +14,15 @@ export const ModalBuy = ({currentCard, show, setShow}) => {
                 height={200}
                 show={show}
             >
-
-                <form >
+                <div>
                     <Card card={currentCard}/>
-                    <input/>
-                    <input/>
-                    <button onClick={() => setShow(false)}/>
-                </form>
+                    <form>
+                        <input/>
+                        <input/>
+                        <button onClick={() => setShow(false)}/>
+                    </form>
+                </div>
+
 
             </Modal>
 

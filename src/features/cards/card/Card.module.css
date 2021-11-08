@@ -1,24 +1,5 @@
-.cardsPageContainer {
-    min-height: 100vh;
-    position: relative;
-    display: flex;
-
-
-    flex-direction: column;
-    align-items: center;
-
-    background-color: whitesmoke;
-}
-
-.cardsBoxContainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-top: 10vh;
-}
 
 .cardBox {
-
     width: 288px;
     height: 256px;
     padding: 0 32px;
@@ -29,37 +10,12 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-}
-
-.cardBoxModal {
-
-    border-color: red;
-
-}
-.navContainer {
-    display: table;
-}
-
-.navContainer a {
-    width: 235px;
-    height: 60px;
-    text-decoration: none;
-    text-align: center;
-    display: table-cell;
-    vertical-align: middle;
-    font-size: 24px;
-    color: #50DAA8;
-    border: solid 1px grey;
-    border-radius: 16px;
-
-
 
 }
 
-.navContainer a:hover {
-    background-color: #50DAA8;
-    color: white;
-}
+
+
+
 .blockWithButton {
     display: flex;
     flex-direction: row;
@@ -69,6 +25,7 @@
 
 .blockWithButton button{
     width: 64px;
+    height: 56px;
     font-size: 16px;
     border-radius: 14px;
     color: #50DAA8;

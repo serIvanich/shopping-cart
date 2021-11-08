@@ -1,12 +1,16 @@
 import React from "react";
-import s from '../CardsPage.module.css'
+import s from './Card.module.css'
 
 
-export const Card = ({card, modalCard}) => {
+export const Card = ({card, onShowModal, modalCard}) => {
 
     const {name, category, price} = card
 
+const onButtonClick = () => {
 
+    onShowModal(card)
+
+}
     return (
         <div className={`${s.cardBox}`} style={modalCard ? {border: 'none'} : {}}>
             <div style={{fontSize: "16px"}}>
@@ -17,11 +21,11 @@ export const Card = ({card, modalCard}) => {
             </div>
             <div className={s.blockWithButton}>
 
-                <div style={{fontSize: "30px"}}>
-                    $
-                    <div style={{fontSize: "60px", display: 'inline-block'}}>{price}</div>
-                </div>
-                {!modalCard && <button onClick={() => {}}>
+
+                    <div >$</div>
+                    <div style={{fontSize: "60px"}}>{price}</div>
+
+                {!modalCard && <button onClick={onButtonClick}>
                     buy
                 </button>}
             </div>

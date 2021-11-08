@@ -17,60 +17,24 @@
     padding-top: 10vh;
 }
 
-.cardBox {
 
-    width: 288px;
-    height: 256px;
-    padding: 0 32px;
-    margin-left: 2vw;
-    margin-bottom: 4vw;
-    border: solid 1px gray;
-    border-radius: 24px;
+.buttonContainer {
     display: flex;
     flex-direction: column;
-
-    justify-content: space-evenly;
-
-
-}
-
-.navContainer {
-    display: table;
+    justify-content: center;
 
     width: 235px;
     height: 60px;
     text-decoration: none;
     text-align: center;
-    display: table-cell;
-    vertical-align: middle;
+
     font-size: 24px;
     color: #50DAA8;
     border: solid 1px grey;
     border-radius: 16px;
-
-
-
 }
 
-.navContainer:hover {
-    background-color: #50DAA8;
-    color: white;
-}
-.blockWithButton {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    font-size: 30px;
-}
-
-.blockWithButton button{
-    width: 64px;
-    font-size: 16px;
-    border-radius: 14px;
-    color: #50DAA8;
-}
-
-.blockWithButton button:hover{
+.buttonContainer:hover {
     background-color: #50DAA8;
     color: white;
 }

@@ -4,7 +4,7 @@ const Modal = (
     {
         enableBackground,
         backgroundStyle,
-        backgroundOnClick = () => {
+        closeModalOnClick = () => {
         },
 
         width,
@@ -19,6 +19,8 @@ const Modal = (
 ) => {
     const top = `calc(50vh - ${height / 2}px)`;
     const left = `calc(50vw - ${width / 2}px)`;
+    const closeRight = `${parseInt(left) + 10} + px`
+    const closeTop = `${parseInt(top) + 10} + px`
 
     if (!show) return null;
 
@@ -37,7 +39,7 @@ const Modal = (
 
                     ...backgroundStyle,
                 }}
-                onClick={backgroundOnClick}
+
             />}
             <div
                 style={{
@@ -52,7 +54,7 @@ const Modal = (
                     justifyContent: 'center',
                     // padding: 20,
                     borderRadius: '24px',
-                    background: 'mintcream',
+                    background: '#FFFFFF',
                     zIndex: 21,
 
                     ...modalStyle,
@@ -60,6 +62,23 @@ const Modal = (
                 onClick={modalOnClick}
             >
                 {children}
+                <div
+                    style={{
+                        width: '30px',
+                        height: '30px',
+                        position: 'absolute',
+                        right: '-10px',
+                        top: '-10px',
+                        border: 'solid 1px grey',
+                        borderRadius: '50%',
+                        textAlign: 'center',
+                        fontSize: '20px',
+                        backgroundColor: '#FFFFFF',
+                        zIndex: 22,
+                    }}
+                    onClick={closeModalOnClick}>
+                    x
+                </div>
             </div>
         </>
     );
