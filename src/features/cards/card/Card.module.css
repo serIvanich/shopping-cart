@@ -10,25 +10,34 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-
+    background: #ffffff;
 }
-
-
-
 
 .blockWithButton {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-content: flex-start;
     font-size: 30px;
+}
+.priceBox {
+    font-size: 60px;
+}
+.logoPrice {
+    font-size: 30px;
+    position: relative;
+    bottom: 20px;
 }
 
 .blockWithButton button{
+    position: relative;
+    top: 20px;
     width: 64px;
     height: 56px;
     font-size: 16px;
     border-radius: 14px;
     color: #50DAA8;
+    background: #ffffff;
 }
 
 .blockWithButton button:hover{
