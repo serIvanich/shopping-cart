@@ -36,10 +36,10 @@ export const ModalBuy = ({currentCard, show, setShow}) => {
             setFormError(null)
         }
     }
-    const onSubmit = () => {
-
-        let res = userName + userPhoneNumber
-
+    const onSubmit = (e) => {
+        e.preventDefault()
+        let res = `name: ${userName}  tel: ${userPhoneNumber}`
+        console.log(res)
     }
     return (
         <div>

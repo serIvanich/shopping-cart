@@ -8,7 +8,7 @@ const App = () => {
 
     const [currentCard, setCurrentCard] = useState({})
     const [showModalBuy, setShowModalBuy] = useState(false)
-debugger
+
     const onShowModal = (card) => {
         setCurrentCard(card)
         setShowModalBuy(true)

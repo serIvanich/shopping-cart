@@ -5,13 +5,8 @@ const Modal = (
         enableBackground,
         backgroundStyle,
         closeModalOnClick ,
-
         width,
         height,
-        modalStyle,
-        modalOnClick = () => {
-        },
-
         show,
         children,
     }
