@@ -1,24 +1,49 @@
 .superInput {
-    margin-bottom: 2px;
-    padding: 3px;
-    border: 2px solid olive;
-    border-radius: 5px;
-    background: khaki;
+    width: 258px;
+    height: 56px;
+    padding: 0px 15px;
+    border: 1px solid grey;
+    outline: 3px solid white;
+    border-radius: 15px;
+    color: grey;
+    font-size: 16px;
+    z-index: 10;
 
 
 }
 
 .errorInput {
-    border: 3px solid firebrick;
-    border-radius: 5px;
-    background: lightpink;
+    width: 258px;
+    height: 56px;
+    padding: 0px 15px;
+    border: 1px solid white;
+    outline: 3px solid firebrick;
+    border-radius: 15px;
+    font-size: 16px;
 }
 
-.error {
-    display: inline-block;
-    margin: 2px 0;
-    padding: 0 5px;
-    border: 1px dashed red;
-    border-radius: 4px;
-    color: red;
+.inputContainer {
+    position: relative;
 }
+
+.textError{
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    color: #E43F3F;
+}
+
+.closeError {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 13px;
+    top: 13px;
+    border: 1px solid #E43F3F;
+    border-radius: 50%;
+    background-color: #E43F3F;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}
+

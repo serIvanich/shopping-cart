@@ -9,7 +9,7 @@ const MyInput = (
         onKeyPress, onEnter,
         error,
         className, spanClassName,
-
+        resetError,
         ...restProps// все остальные пропсы попадут в объект restProps
     }
 ) => {
@@ -26,23 +26,28 @@ const MyInput = (
         && onEnter() // то вызвать его
     }
 
-    const finalSpanClassName = `${s.error} ${spanClassName ? spanClassName : ''}`
+    const finalErrorTextClassName = `${s.textError} ${spanClassName ? spanClassName : ''}`
     const finalInputClassName = `${error ? s.errorInput : s.superInput} ${className} `
-
+    const visibility = `${error ? 'visibility' : 'hidden'}`
     return (
-        <>
+        <div className={s.inputContainer}>
             <input
                 type={type}
                 name={restProps.name}
                 onChange={onChangeCallback}
                 onKeyPress={onKeyPressCallback}
                 className={finalInputClassName}
-
+                onFocus={resetError}
 
                 {...restProps} // отдаём инпуту остальные пропсы если они есть (value например там внутри)
             />
-            {error && <span className={finalSpanClassName}>{error}</span>}
-        </>
+
+            <small className={finalErrorTextClassName} style={visibility==='visibility'? {zIndex: '20'}: {}}>
+                {error}
+            </small>
+            <div className={s.closeError} onClick={resetError} style={visibility==='visibility'? {zIndex: '20'}: {}}>х</div>
+
+        </div>
     )
 }
 

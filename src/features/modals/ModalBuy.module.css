@@ -2,14 +2,41 @@
 .settingModals {
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-content: center;
+    display: grid;
+    grid-template-rows: 1fr 3fr;
 }
 
 .settingModalsForm {
+    padding-bottom: 10px;
     display: flex;
     flex-direction: column;
-    align-content: space-evenly;
-    width: 60%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.inputBox {
+    height: 145px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.buttonFormSubmit {
+    width: 288px;
+    height: 56px;
+    border: 1px solid darkgrey;
+    border-radius: 15px;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #50DAA8;
+    background: #ffffff;
+}
+
+.buttonFormSubmit:hover {
+    background-color: #50DAA8;
+    color: white;
+}
+
+.classNameInput {
+    position: relative
 }

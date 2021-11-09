@@ -59,11 +59,10 @@ const Modal = (
                         position: 'absolute',
                         right: '-10px',
                         top: '-10px',
-                        border: 'solid 1px grey',
                         borderRadius: '50%',
                         textAlign: 'center',
                         fontSize: '20px',
-                        backgroundColor: '#FFFFFF',
+                        backgroundColor: '#F2F2F2',
                         zIndex: 22,
                     }}
                     onClick={closeModalOnClick}>

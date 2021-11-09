@@ -9,12 +9,25 @@ export const Card = ({card, onShowModal, modalCard}) => {
         fontSize: "16px",
         textTransform: 'uppercase',
     }
+    const styleModalCard = {
+        height: '180px',
+        margin: '0',
+        paddingTop: '20px',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+
+        border: 'none',
+    }
+    const styleModal =  modalCard ? styleModalCard : null
+
+
+
 
     const onButtonClick = () => {
         onShowModal(card)
     }
     return (
-        <div className={s.cardBox} style={modalCard ? {border: 'none'} : {}}>
+        <div className={s.cardBox} style={styleModal ? styleModal : {}}>
             <div style={wordStyle}>
                 {category}
             </div>

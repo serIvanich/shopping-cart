@@ -53,18 +53,23 @@ export const ModalBuy = ({currentCard, show, setShow}) => {
             >
                 <div className={s.settingModals}>
                     <Card card={currentCard} modalCard={true}/>
-                    <form onSubmit={onSubmit}>
-                        <MyInput name={'name'} value={userName} type={'text'}
-                                 onBlur={onBlurInput} error={formError}
-                                 onChangeText={setUserName} placeholder={'Name'}
-                                 onFocus={resetFormError}
-                        />
-                        <MyInput name={'phone'} value={userPhoneNumber} type={'text'}
-                                 onBlur={onBlurInput} error={formError}
-                                 onChangeText={setUserPhoneNumber} placeholder={'Number'}
-                                 onFocus={resetFormError}
-                        />
-                        <button type={'submit'}>order</button>
+                    <form className={s.settingModalsForm} onSubmit={onSubmit}>
+                        <div className={s.inputBox}>
+                            <MyInput name={'name'} value={userName} type={'text'}
+                                     onBlur={onBlurInput} error={formError}
+                                     onChangeText={setUserName} placeholder={'Name'}
+                                     onFocus={resetFormError} resetError={resetFormError}
+                                     className={s.classNameInput}
+                            />
+                            <MyInput name={'phone'} value={userPhoneNumber} type={'text'}
+                                     onBlur={onBlurInput} error={formError}
+                                     onChangeText={setUserPhoneNumber} placeholder={'Number'}
+                                     onFocus={resetFormError} resetError={resetFormError}
+                                     className={s.classNameInput}
+                            />
+                        </div>
+
+                        <button className={s.buttonFormSubmit} type={'submit'}>order</button>
                     </form>
                 </div>
 
