@@ -1,33 +1,29 @@
 import React from "react";
-import s from './Card.module.css'
+import s from './Item.module.css'
 
 
-export const Card = ({card, onShowModal, modalCard}) => {
+export const Item = ({item, onShowModal, isModalItems}) => {
 
-    const {name, category, price} = card
+    const {name, category, price} = item
     const wordStyle = {
         fontSize: "16px",
         textTransform: 'uppercase',
     }
-    const styleModalCard = {
+    const styleModalItems = {
         height: '180px',
         margin: '0',
         paddingTop: '20px',
         alignItems: 'center',
         justifyContent: 'space-between',
-
         border: 'none',
     }
-    const styleModal =  modalCard ? styleModalCard : null
-
-
-
+    const styleModal =  isModalItems ? styleModalItems : null
 
     const onButtonClick = () => {
-        onShowModal(card)
+        onShowModal(item)
     }
     return (
-        <div className={s.cardBox} style={styleModal ? styleModal : {}}>
+        <div className={s.itemBox} style={styleModal ? styleModal : {}}>
             <div style={wordStyle}>
                 {category}
             </div>
@@ -35,9 +31,8 @@ export const Card = ({card, onShowModal, modalCard}) => {
                 {name}
             </div>
             <div className={s.blockWithButton}>
-
                 <div className={s.priceBox}><span className={s.logoPrice}>$</span>{price}</div>
-                {!modalCard && <button style={wordStyle} onClick={onButtonClick}>
+                {!isModalItems && <button style={wordStyle} onClick={onButtonClick}>
                     buy
                 </button>}
             </div>

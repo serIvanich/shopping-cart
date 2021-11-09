@@ -4,30 +4,28 @@ import s from './Input.module.css'
 
 const Input = (
     {
-        type,
-        onChange, onChangeText,
-        onKeyPress, onEnter,
-        error,name,
-        className, spanClassName,
-        onFocusInput,
-        ...restProps// все остальные пропсы попадут в объект restProps
+        type, onChangeText, error,name,
+        className, errorTextClassName, onFocusInput,
+        ...restProps
     }
 ) => {
 
     const onChangeCallback = (e) => {
         onChangeText && onChangeText(e.currentTarget.value)
     }
-
-    const onKeyPressCallback = (e) => {
-        onKeyPress && onKeyPress(e);
-
-        onEnter // если есть пропс onEnter
-        && e.key === 'Enter' // и если нажата кнопка Enter
-        && onEnter() // то вызвать его
+    const onClickCloseCallback = (e) => {
+        console.log(e)
+        let input = e.target.previousElementSibling.previousElementSibling
+        input.avtofocus = true
+        onFocusInput(input.name)
     }
 
-    const finalErrorTextClassName = `${s.textError} ${spanClassName ? spanClassName : ''}`
-    const finalInputClassName = `${error ? s.errorInput : s.superInput} ${className} `
+    const onFocusCallback = (e) => {
+        onFocusInput(e.target.name)
+    }
+
+    const finalErrorTextClassName = `${s.textError} ${errorTextClassName ? errorTextClassName : ''}`
+    const finalInputClassName = `${error ? s.errorInput : s.generalInput} ${className} `
     const visibility = `${error ? 'visibility' : 'hidden'}`
     return (
         <div className={s.inputContainer}>
@@ -35,9 +33,8 @@ const Input = (
                 type={type}
                 name={name}
                 onChange={onChangeCallback}
-                onKeyPress={onKeyPressCallback}
                 className={finalInputClassName}
-                onFocus={(e) => onFocusInput(e.target.name)}
+                onFocus={onFocusCallback}
 
                 {...restProps} // отдаём инпуту остальные пропсы если они есть (value например там внутри)
             />
@@ -45,7 +42,7 @@ const Input = (
             <small className={finalErrorTextClassName} style={visibility==='visibility'? {zIndex: '20'}: {}}>
                 {error}
             </small>
-            <div className={s.closeError} onClick={(e) => onFocusInput(e.target.name)} style={visibility==='visibility'? {zIndex: '20'}: {}}>х</div>
+            <div className={s.closeError} onClick={onClickCloseCallback} style={visibility==='visibility'? {zIndex: '20'}: {}}>х</div>
 
         </div>
     )

@@ -1,12 +1,12 @@
 
-.settingModals {
+.settingModal {
     width: 100%;
     height: 100%;
     display: grid;
     grid-template-rows: 1fr 3fr;
 }
 
-.settingModalsForm {
+.settingModalForm {
     padding-bottom: 10px;
     display: flex;
     flex-direction: column;
@@ -28,15 +28,16 @@
     border-radius: 15px;
     font-size: 16px;
     text-transform: uppercase;
-    color: #50DAA8;
-    background: #ffffff;
+    color: #ffffff;
+    background: #50DAA8;
 }
 
-.buttonFormSubmit:hover {
-    background-color: #50DAA8;
-    color: white;
-}
+
 
 .classNameInput {
     position: relative
+}
+
+.classNameInput:hover {
+    border-color: #50DAA8;
 }

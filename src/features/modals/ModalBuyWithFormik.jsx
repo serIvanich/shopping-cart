@@ -1,6 +1,6 @@
 import React from "react";
 import Modal from "../../common/modal/modal";
-import {Card} from "../cards/card/Card";
+import {Item} from "../items/item/Item";
 import s from './ModalBuy.module.css'
 import {useFormik} from "formik";
 
@@ -21,7 +21,6 @@ export const ModalBuyWithFormik = ({currentCard, show, setShow}) => {
             } else if (!/[a-z]/i.test(values.name)) {
                 errors.name = 'Only letters allowed';
             }
-
             if (!values.phoneNumber) {
                 errors.phoneNumber = 'This field in required';
             } else if (!/\d/i.test(values.phoneNumber)) {
@@ -29,7 +28,6 @@ export const ModalBuyWithFormik = ({currentCard, show, setShow}) => {
             } else if (values.phoneNumber.length !== 12) {
                 errors.phoneNumber = 'Should contain 12 characters';
             }
-
             return errors;
         },
         onSubmit: values => {
@@ -50,9 +48,9 @@ export const ModalBuyWithFormik = ({currentCard, show, setShow}) => {
                 show={show}
             >
 
-                <div className={s.settingModals}>
-                    <Card card={currentCard} modalCard={true}/>
-                    <form onSubmit={formik.handleSubmit} className={s.settingModalsForm}>
+                <div className={s.settingModal}>
+                    <Item item={currentCard} modalCard={true}/>
+                    <form onSubmit={formik.handleSubmit} className={s.settingModalForm}>
                         <div>
                             <label htmlFor="name">Name</label>
                             <input

@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import './App.css';
-import {CardsPage} from "../features/cards/CardsPage";
+import {ItemsViewContainer} from "../features/items/ItemsViewContainer";
 import {ModalBuy} from "../features/modals/ModalBuy";
 
 
@@ -18,7 +18,7 @@ const App = () => {
 
         <div className="App">
 
-            <CardsPage onShowModal={onShowModal}/>
+            <ItemsViewContainer onShowModal={onShowModal}/>
             <ModalBuy currentCard={currentCard} show={showModalBuy} setShow={setShowModalBuy}/>
         </div>
 

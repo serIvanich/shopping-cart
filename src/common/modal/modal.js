@@ -49,7 +49,6 @@ const Modal = (
                     zIndex: 21,
 
                 }}
-
             >
                 {children}
                 <div

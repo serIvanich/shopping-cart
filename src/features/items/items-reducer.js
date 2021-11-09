@@ -1,15 +1,13 @@
-import {cardsApi} from "../../api/project-api";
+import {itemsApi} from "../../api/project-api";
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {appActions} from "../common-action/app";
 
 
-const getCards = createAsyncThunk('cards/getCards',
+const getItems = createAsyncThunk('items/getItems',
     async (param, thunkAPI) => {
         thunkAPI.dispatch(appActions.setAppStatus({status: 'loading'}))
         try {
-
-            const data = await cardsApi.getCards()
-
+            const data = await itemsApi.getItems()
             thunkAPI.dispatch(appActions.setAppStatus({status: 'success'}))
             return data
         } catch (e) {
@@ -17,21 +15,20 @@ const getCards = createAsyncThunk('cards/getCards',
         }
     })
 
-
 export const asyncActions = {
-    getCards: getCards,
+    getItems: getItems,
 }
+
 const slice = createSlice({
-    name: 'cards',
+    name: 'items',
     initialState: {
-        cardsArr: [],
+        itemsArray: [],
     },
     reducers: {},
     extraReducers: (builder) => {
-        builder.addCase(getCards.fulfilled,
+        builder.addCase(getItems.fulfilled,
             (state, action) => {
-
-                state.cardsArr.push(...action.payload)
+                state.itemsArray.push(...action.payload)
             }
         )
     }
