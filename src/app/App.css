@@ -1,13 +1,9 @@
 .App {
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-items: center;
+    align-content: center;
     background: #E5E5E5;
+
 }
-
-
-/*@keyframes App-logo-spin {*/
-/*  from {*/
-/*    transform: rotate(0deg);*/
-/*  }*/
-/*  to {*/
-/*    transform: rotate(360deg);*/
-/*  }*/
-/*}*/

@@ -1,10 +1,12 @@
 .cardsPageContainer {
-    min-height: 100vh;
-    position: relative;
+    min-width: 90vw;
+    min-height: 90vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: #E5E5E5;
+    border: 1px solid grey;
+    background: #F2F2F2;
+
 }
 
 .cardsBoxContainer {

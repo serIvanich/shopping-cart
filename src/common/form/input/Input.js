@@ -1,15 +1,15 @@
 import React from 'react'
-import s from './MyInput.module.css'
+import s from './Input.module.css'
 
 
-const MyInput = (
+const Input = (
     {
         type,
         onChange, onChangeText,
         onKeyPress, onEnter,
-        error,
+        error,name,
         className, spanClassName,
-        resetError,
+        onFocusInput,
         ...restProps// все остальные пропсы попадут в объект restProps
     }
 ) => {
@@ -33,11 +33,11 @@ const MyInput = (
         <div className={s.inputContainer}>
             <input
                 type={type}
-                name={restProps.name}
+                name={name}
                 onChange={onChangeCallback}
                 onKeyPress={onKeyPressCallback}
                 className={finalInputClassName}
-                onFocus={resetError}
+                onFocus={(e) => onFocusInput(e.target.name)}
 
                 {...restProps} // отдаём инпуту остальные пропсы если они есть (value например там внутри)
             />
@@ -45,10 +45,10 @@ const MyInput = (
             <small className={finalErrorTextClassName} style={visibility==='visibility'? {zIndex: '20'}: {}}>
                 {error}
             </small>
-            <div className={s.closeError} onClick={resetError} style={visibility==='visibility'? {zIndex: '20'}: {}}>х</div>
+            <div className={s.closeError} onClick={(e) => onFocusInput(e.target.name)} style={visibility==='visibility'? {zIndex: '20'}: {}}>х</div>
 
         </div>
     )
 }
 
-export default MyInput
+export default Input
