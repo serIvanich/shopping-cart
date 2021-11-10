@@ -4,8 +4,8 @@ import s from './Input.module.css'
 
 const Input = (
     {
-        type, onChangeText, error,name,
-        className, errorTextClassName, onFocusInput,
+        type, error, name, className,
+        onChangeText, errorTextClassName, onFocusInput,
         ...restProps
     }
 ) => {
@@ -14,10 +14,8 @@ const Input = (
         onChangeText && onChangeText(e.currentTarget.value)
     }
     const onClickCloseCallback = (e) => {
-        console.log(e)
-        let input = e.target.previousElementSibling.previousElementSibling
-        input.avtofocus = true
-        onFocusInput(input.name)
+        const name = e.target.previousElementSibling.previousElementSibling.name
+        onFocusInput(name)
     }
 
     const onFocusCallback = (e) => {
@@ -36,7 +34,7 @@ const Input = (
                 className={finalInputClassName}
                 onFocus={onFocusCallback}
 
-                {...restProps} // отдаём инпуту остальные пропсы если они есть (value например там внутри)
+                {...restProps}
             />
 
             <small className={finalErrorTextClassName} style={visibility==='visibility'? {zIndex: '20'}: {}}>

@@ -33,7 +33,7 @@ export const ModalBuy = ({currentCard: currentItem, show, setShow}) => {
                 setNameValue('')
             }
 
-        } else if (name === 'phone') {
+        } else if (name === 'phoneNumber') {
             if (formErrors.phoneNumberError) {
                 setFormErrors({...formErrors, phoneNumberError: ''})
                 setPhoneNumberValue('')
@@ -48,7 +48,7 @@ export const ModalBuy = ({currentCard: currentItem, show, setShow}) => {
             formValidator('name', nameValue, phoneNumberValue, formErrors, setFormErrors)
         }
         if (!phoneNumberValue) {
-            formValidator('phone', nameValue, phoneNumberValue, formErrors, setFormErrors)
+            formValidator('phoneNumber', nameValue, phoneNumberValue, formErrors, setFormErrors)
         }
         if (formErrors.nameError || formErrors.phoneNumberError) {
             return
@@ -71,16 +71,14 @@ export const ModalBuy = ({currentCard: currentItem, show, setShow}) => {
                     <form className={s.settingModalForm} onSubmit={onSubmit}>
                         <div className={s.inputBox}>
                             <Input name={'name'} value={nameValue} type={'text'}
-                                   onBlur={onBlurInput} error={formErrors.nameError}
+                                   error={formErrors.nameError} className={s.classNameInput}
                                    onChangeText={setNameValue} placeholder={'Name'}
-                                   onFocusInput={onFocusInput}
-                                   className={s.classNameInput}
+                                   onFocusInput={onFocusInput} onBlur={onBlurInput}
                             />
-                            <Input name={'phone'} value={phoneNumberValue} type={'text'}
-                                   onBlur={onBlurInput} error={formErrors.phoneNumberError}
+                            <Input name={'phoneNumber'} value={phoneNumberValue} type={'text'}
+                                   error={formErrors.phoneNumberError}  className={s.classNameInput}
                                    onChangeText={setPhoneNumberValue} placeholder={'Number'}
-                                   onFocusInput={onFocusInput}
-                                   className={s.classNameInput}
+                                   onFocusInput={onFocusInput}  onBlur={onBlurInput}
                             />
                         </div>
                         <button className={s.buttonFormSubmit} type={'submit'}>order</button>
