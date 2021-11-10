@@ -1,7 +1,7 @@
-import {itemsApi} from "../../api/project-api";
-import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
-import {appActions} from "../common-action/app";
-import {handleAsyncServerNetworkError} from "../../utils/error-utils";
+import {itemsApi} from '../../api/project-api';
+import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
+import {appActions} from '../common-action/app';
+import {handleAsyncServerNetworkError} from '../../utils/error-utils';
 
 const getItems = createAsyncThunk('items/getItems',
     async (param, thunkAPI) => {
@@ -15,11 +15,11 @@ const getItems = createAsyncThunk('items/getItems',
         }
     })
 
-const asyncActions = {
+export const asyncActions = {
     getItems: getItems,
 }
 
-const slice = createSlice({
+export const slice = createSlice({
     name: 'items',
     initialState: {
         itemsArray: [],
@@ -33,9 +33,3 @@ const slice = createSlice({
         )
     }
 })
-
-export default slice.reducer
-export const itemsActions = {
-    ...asyncActions,
-    ...slice.actions
-}

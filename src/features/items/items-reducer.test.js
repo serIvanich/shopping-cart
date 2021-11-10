@@ -1,5 +1,4 @@
-import itemsReducer from './items-reducer';
-import {itemsActions} from './items-reducer';
+import {itemsActions, itemsReducer} from './index';
 
 const {getItems} = itemsActions
 

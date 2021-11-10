@@ -1,15 +1,16 @@
-import React, {useState} from "react";
-import Modal from "../../common/modal/modal";
-import {Item} from "../items/item/Item";
-import s from "./ModalBuy.module.css";
-import Input from "../../common/form/input/Input";
-import {formValidator} from "../../utils/error-utils";
+import React, {useState} from 'react';
+import Modal from '../../common/modal/modal';
+import {Item} from '../items/item/Item';
+import s from './ModalBuy.module.css';
+import Input from '../../common/form/input/Input';
+import {formValidator} from '../../utils/error-utils';
 
-export const ModalBuy = ({currentItem, show, setShow}) => {
+export const ModalBuy = React.memo(({currentItem, show, setShow}) => {
 
     const [nameValue, setNameValue] = useState('')
     const [phoneNumberValue, setPhoneNumberValue] = useState('')
     const [formErrors, setFormErrors] = useState({nameError: '', phoneNumberError: ''})
+    let isDisabledFormButton = false
 
     const conditionNameError = !nameValue || !!formErrors.nameError
     const conditionPhoneNumberError = !phoneNumberValue || !!formErrors.phoneNumberError
@@ -59,7 +60,7 @@ export const ModalBuy = ({currentItem, show, setShow}) => {
         if (findError) {
             return
         }
-
+        isDisabledFormButton = true
         let valueForm = `name: ${nameValue}  tel: ${phoneNumberValue}`
         console.log(valueForm)
     }
@@ -87,10 +88,12 @@ export const ModalBuy = ({currentItem, show, setShow}) => {
                                    onFocusInput={onFocusInput} onBlur={onBlurInput}
                             />
                         </div>
-                        <button className={s.buttonFormSubmit} type={'submit'}>order</button>
+                        <button className={s.buttonFormSubmit} disabled={isDisabledFormButton}
+                                type={'submit'}>order
+                        </button>
                     </form>
                 </div>
             </Modal>
         </div>
     )
-}
+})

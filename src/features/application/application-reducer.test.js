@@ -1,5 +1,5 @@
-import appReducer from "../application/application-reducer";
-const {appActions} = require("../common-action/app");
+import {appReducer} from './index';
+import {appActions} from '../common-action/app';
 
 let startState
 

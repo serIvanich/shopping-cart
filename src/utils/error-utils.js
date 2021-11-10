@@ -1,4 +1,4 @@
-import {appActions} from "../features/common-action/app";
+import {appActions} from '../features/common-action/app';
 
 export const formValidator = (name, nameValue, phoneNumberValue, formErrors, setFormErrors) => {
 

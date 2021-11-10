@@ -1,11 +1,12 @@
-import React, {useEffect, useState} from "react";
-import {Item} from "./item/Item";
-import {useSelector} from "react-redux";
+import React, {useEffect, useState} from 'react';
+import {Item} from './item/Item';
+import {useSelector} from 'react-redux';
 import s from './ItemsViewContainer.module.css'
-import {Preloader} from "../../common/preloader/Preloader";
-import {itemsActions} from "./items-reducer";
-import {useActions} from "../../utils/redux-utils";
-import {selectRandomItems} from "../../utils/select-random-items-utils";
+import {Preloader} from '../../common/preloader/Preloader';
+import {useActions} from '../../utils/redux-utils';
+import {selectRandomItems} from '../../utils/select-random-items-utils';
+import {appSelectors} from '../application';
+import {itemsActions, itemsSelectors} from './index';
 
 export const ItemsViewContainer = ({show, onShowModal}) => {
 
@@ -18,8 +19,8 @@ export const ItemsViewContainer = ({show, onShowModal}) => {
         getItems()
     }, [getItems])
 
-    const items = useSelector(state => state.items.itemsArray)
-    const status = useSelector(state => state.app.status)
+    const items = useSelector(itemsSelectors.selectorItems)
+    const status = useSelector(appSelectors.selectorStatus)
 
     if (!items.length) {
         return <Preloader/>

@@ -1,7 +1,7 @@
-import {createSlice} from "@reduxjs/toolkit";
-import {appActions} from "../common-action/app";
+import {createSlice} from '@reduxjs/toolkit';
+import {appActions} from '../common-action/app';
 
-const slice = createSlice({
+export const slice = createSlice({
     name: 'app',
     initialState: {
         status: 'idle',
@@ -18,5 +18,3 @@ const slice = createSlice({
             })
     }
 })
-
-export default slice.reducer

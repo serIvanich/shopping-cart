@@ -1,7 +1,7 @@
 import React from 'react'
 import s from './Input.module.css'
 
-const Input = ({type, error, name, className, onChangeText,
+const Input = React.memo(({type, error, name, className, onChangeText,
                    errorTextClassName, onFocusInput, ...restProps}) => {
 
     const finalErrorTextClassName = `${s.textError} ${errorTextClassName ? errorTextClassName : ''}`
@@ -39,6 +39,6 @@ const Input = ({type, error, name, className, onChangeText,
 
         </div>
     )
-}
+})
 
 export default Input

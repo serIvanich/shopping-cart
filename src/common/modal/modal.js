@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-const Modal = ({
+const Modal = React.memo(({
                    enableBackground, backgroundStyle, closeModalOnClick, width,
                    height, show, children,
                }) => {
@@ -60,7 +60,7 @@ const Modal = ({
                 </div>
             </div>
         </>
-    );
-};
+    )
+})
 
 export default Modal;

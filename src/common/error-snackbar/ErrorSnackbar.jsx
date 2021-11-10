@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const ErrorSnackbar = ({error}) => {
+export const ErrorSnackbar = React.memo(({error}) => {
     const styleSnackbar = {
         padding: '5vh',
         position: 'absolute',
@@ -17,4 +17,4 @@ export const ErrorSnackbar = ({error}) => {
             {error}
         </div>
     )
-}
+})
