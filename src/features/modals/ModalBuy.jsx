@@ -5,11 +5,16 @@ import s from "./ModalBuy.module.css";
 import Input from "../../common/form/input/Input";
 import {formValidator} from "../../utils/error-utils";
 
-export const ModalBuy = ({currentCard: currentItem, show, setShow}) => {
+export const ModalBuy = ({currentItem, show, setShow}) => {
 
     const [nameValue, setNameValue] = useState('')
     const [phoneNumberValue, setPhoneNumberValue] = useState('')
     const [formErrors, setFormErrors] = useState({nameError: '', phoneNumberError: ''})
+
+
+    const conditionNameError = !nameValue || !!formErrors.nameError
+    const conditionPhoneNumberError = !phoneNumberValue || !!formErrors.phoneNumberError
+    const findError = conditionNameError || conditionPhoneNumberError
 
     const onBlurInput = (e) => {
         formValidator(e.target.name, nameValue, phoneNumberValue, formErrors, setFormErrors)
@@ -26,7 +31,8 @@ export const ModalBuy = ({currentCard: currentItem, show, setShow}) => {
         setPhoneNumberValue('')
     }
 
-    const onFocusInput = (name, resetValue=false) => {
+    // focus on field<input> without reset value<input>
+    const onFocusInput = (name, resetValue = false) => {
         if (name === 'name') {
             if (formErrors.nameError) {
                 setFormErrors({...formErrors, nameError: ''})
@@ -44,13 +50,14 @@ export const ModalBuy = ({currentCard: currentItem, show, setShow}) => {
     const onSubmit = (e) => {
         e.preventDefault()
 
-        if (!nameValue) {
+        if (conditionNameError) {
             formValidator('name', nameValue, phoneNumberValue, formErrors, setFormErrors)
         }
-        if (!phoneNumberValue) {
+        if (conditionPhoneNumberError) {
             formValidator('phoneNumber', nameValue, phoneNumberValue, formErrors, setFormErrors)
         }
-        if (formErrors.nameError || formErrors.phoneNumberError) {
+
+        if (findError) {
             return
         }
 
@@ -76,9 +83,9 @@ export const ModalBuy = ({currentCard: currentItem, show, setShow}) => {
                                    onFocusInput={onFocusInput} onBlur={onBlurInput}
                             />
                             <Input name={'phoneNumber'} value={phoneNumberValue} type={'text'}
-                                   error={formErrors.phoneNumberError}  className={s.classNameInput}
+                                   error={formErrors.phoneNumberError} className={s.classNameInput}
                                    onChangeText={setPhoneNumberValue} placeholder={'Number'}
-                                   onFocusInput={onFocusInput}  onBlur={onBlurInput}
+                                   onFocusInput={onFocusInput} onBlur={onBlurInput}
                             />
                         </div>
                         <button className={s.buttonFormSubmit} type={'submit'}>order</button>

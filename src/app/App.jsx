@@ -8,20 +8,21 @@ import {ErrorSnackbar} from "../common/error-snackbar/ErrorSnackbar";
 
 const App = () => {
 const appError = useSelector(state => state.app.error)
-    const [currentCard, setCurrentCard] = useState({})
+    const [currentItem, setCurrentItem] = useState({})
     const [showModalBuy, setShowModalBuy] = useState(false)
 
-    const onShowModal = (card) => {
-        setCurrentCard(card)
+    const onShowModal = (item) => {
+        setCurrentItem(item)
         setShowModalBuy(true)
+
     }
 
     return (
 
         <div className="App">
 
-            <ItemsViewContainer onShowModal={onShowModal}/>
-            <ModalBuy currentCard={currentCard} show={showModalBuy} setShow={setShowModalBuy}/>
+            <ItemsViewContainer show={showModalBuy} onShowModal={onShowModal}/>
+            <ModalBuy currentItem={currentItem} show={showModalBuy} setShow={setShowModalBuy}/>
             { appError && <ErrorSnackbar error={appError} />}
         </div>
 

@@ -1,14 +1,17 @@
 
-export const selectRandomItems = (itemsArray) => {
+export const selectRandomItems = (itemsArray, count) => {
     const copyItemsArray = [...itemsArray]
-    let count = 0
-    const newItemsArray = []
-    while (count < 6) {
-        ++count
-        const index = getRandomInd(copyItemsArray.length)
-        newItemsArray.push(copyItemsArray[index])
-        copyItemsArray.splice(index, 1)
-
+    let newItemsArray = []
+    let i = 0
+    if (0 < count < itemsArray.length) {
+        while (i < count) {
+            ++i
+            const index = getRandomInd(copyItemsArray.length)
+            newItemsArray.push(copyItemsArray[index])
+            copyItemsArray.splice(index, 1)
+        }
+    } else {
+        newItemsArray = itemsArray.slice(i, count)
     }
     return newItemsArray
 }
