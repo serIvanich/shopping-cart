@@ -10,21 +10,23 @@ const Input = (
     }
 ) => {
 
+    const finalErrorTextClassName = `${s.textError} ${errorTextClassName ? errorTextClassName : ''}`
+    const finalInputClassName = `${error ? s.errorInput : s.generalInput} ${className} `
+    const visibility = `${error ? 'visibility' : 'hidden'}`
+    const visibilityStyle = visibility==='visibility'? {zIndex: '20'}: null
+
     const onChangeCallback = (e) => {
         onChangeText && onChangeText(e.currentTarget.value)
     }
     const onClickCloseCallback = (e) => {
         const name = e.target.previousElementSibling.previousElementSibling.name
-        onFocusInput(name)
+        onFocusInput(name, true)
     }
 
     const onFocusCallback = (e) => {
         onFocusInput(e.target.name)
     }
 
-    const finalErrorTextClassName = `${s.textError} ${errorTextClassName ? errorTextClassName : ''}`
-    const finalInputClassName = `${error ? s.errorInput : s.generalInput} ${className} `
-    const visibility = `${error ? 'visibility' : 'hidden'}`
     return (
         <div className={s.inputContainer}>
             <input
@@ -33,14 +35,12 @@ const Input = (
                 onChange={onChangeCallback}
                 className={finalInputClassName}
                 onFocus={onFocusCallback}
-
                 {...restProps}
             />
-
-            <small className={finalErrorTextClassName} style={visibility==='visibility'? {zIndex: '20'}: {}}>
+            <small className={finalErrorTextClassName} style={visibilityStyle}>
                 {error}
             </small>
-            <div className={s.closeError} onClick={onClickCloseCallback} style={visibility==='visibility'? {zIndex: '20'}: {}}>х</div>
+            <div className={s.closeError} onClick={onClickCloseCallback} style={visibilityStyle}>х</div>
 
         </div>
     )

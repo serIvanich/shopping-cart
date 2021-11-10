@@ -26,17 +26,17 @@ export const ModalBuy = ({currentCard: currentItem, show, setShow}) => {
         setPhoneNumberValue('')
     }
 
-    const onFocusInput = (name) => {
+    const onFocusInput = (name, resetValue=false) => {
         if (name === 'name') {
             if (formErrors.nameError) {
                 setFormErrors({...formErrors, nameError: ''})
-                setNameValue('')
+                if (resetValue) setNameValue('')
             }
 
         } else if (name === 'phoneNumber') {
             if (formErrors.phoneNumberError) {
                 setFormErrors({...formErrors, phoneNumberError: ''})
-                setPhoneNumberValue('')
+                if (resetValue) setPhoneNumberValue('')
             }
         }
     }

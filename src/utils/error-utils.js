@@ -13,7 +13,6 @@ export const formValidator = (name, nameValue, phoneNumberValue, formErrors, set
         }
     }
     if (name === 'phoneNumber') {
-debugger
         if (!phoneNumberValue) {
             changeFormErrors(name, 'This field in required')
         } else if (!/^[0-9]+$/i.test(phoneNumberValue)) {
