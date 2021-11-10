@@ -6,6 +6,7 @@ import Input from "../../common/form/input/Input";
 import {formValidator} from "../../utils/error-utils";
 
 export const ModalBuy = ({currentCard: currentItem, show, setShow}) => {
+
     const [nameValue, setNameValue] = useState('')
     const [phoneNumberValue, setPhoneNumberValue] = useState('')
     const [formErrors, setFormErrors] = useState({nameError: '', phoneNumberError: ''})
@@ -42,6 +43,13 @@ export const ModalBuy = ({currentCard: currentItem, show, setShow}) => {
 
     const onSubmit = (e) => {
         e.preventDefault()
+
+        if (!nameValue) {
+            formValidator('name', nameValue, phoneNumberValue, formErrors, setFormErrors)
+        }
+        if (!phoneNumberValue) {
+            formValidator('phone', nameValue, phoneNumberValue, formErrors, setFormErrors)
+        }
         if (formErrors.nameError || formErrors.phoneNumberError) {
             return
         }

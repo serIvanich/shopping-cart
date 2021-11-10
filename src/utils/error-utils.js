@@ -10,10 +10,10 @@ export const formValidator = (name, nameValue, phoneNumberValue, formErrors, set
 
         if (!phoneNumberValue) {
             setFormErrors({...formErrors, phoneNumberError: 'This field in required'})
-        } else if (phoneNumberValue.length !== 12) {
-            setFormErrors({...formErrors, phoneNumberError: 'Should contain 12 characters'})
         } else if (!/^[0-9]+$/i.test(phoneNumberValue)) {
             setFormErrors({...formErrors, phoneNumberError: 'Only numbers allowed'})
+        } else if (phoneNumberValue.length !== 12) {
+            setFormErrors({...formErrors, phoneNumberError: 'Should contain 12 characters'})
         }
 
     }

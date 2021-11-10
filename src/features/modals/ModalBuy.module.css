@@ -24,6 +24,7 @@
 .buttonFormSubmit {
     width: 288px;
     height: 56px;
+    position: relative;
     border: 1px solid darkgrey;
     border-radius: 15px;
     font-size: 16px;
@@ -32,7 +33,14 @@
     background: #50DAA8;
 }
 
-
+.buttonFormSubmit:hover::after {
+    content: '→';
+    position: absolute;
+    top: 9px;
+    right: 77px;
+    font-size: 26px;
+    color: #ffffff;
+}
 
 .classNameInput {
     position: relative
@@ -41,3 +49,4 @@
 .classNameInput:hover {
     border-color: #50DAA8;
 }
+

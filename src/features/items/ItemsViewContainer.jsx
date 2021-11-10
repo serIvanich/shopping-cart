@@ -23,11 +23,10 @@ export const ItemsViewContainer = ({onShowModal}) => {
 
     // items for views
     const itemsViews = items.slice(0, 6)
-    const mapItemsView = itemsViews.map((c, i) => <Item key={i} item={c} onShowModal={onShowModal}/>)
 
     const onClickButtonCheapest = () => {
-        let item = itemsViews.reduce((pr, c) => pr.price < c.price ? pr : c, {})
-        onShowModal(item)
+        const cheapestItem = itemsViews.reduce((pr, c) => pr.price < c.price ? pr : c, {})
+        onShowModal(cheapestItem)
     }
 
 
@@ -35,7 +34,9 @@ export const ItemsViewContainer = ({onShowModal}) => {
         <div className={s.itemsViewContainer}>
             {loadingStatus && <Preloader/>}
             <div className={s.itemsBlock}>
-                {mapItemsView}
+                {itemsViews.map((c, i) => {
+                    return <Item key={i} item={c} onShowModal={onShowModal}/>
+                })}
             </div>
             <div className={s.buttonContainer} onClick={onClickButtonCheapest} disabled={loadingStatus}>
                 Buy cheapest
