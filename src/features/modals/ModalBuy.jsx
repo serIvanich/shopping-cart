@@ -11,7 +11,6 @@ export const ModalBuy = ({currentItem, show, setShow}) => {
     const [phoneNumberValue, setPhoneNumberValue] = useState('')
     const [formErrors, setFormErrors] = useState({nameError: '', phoneNumberError: ''})
 
-
     const conditionNameError = !nameValue || !!formErrors.nameError
     const conditionPhoneNumberError = !phoneNumberValue || !!formErrors.phoneNumberError
     const findError = conditionNameError || conditionPhoneNumberError
