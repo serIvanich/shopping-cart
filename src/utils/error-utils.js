@@ -1,3 +1,4 @@
+import {appActions} from "../features/common-action/app";
 
 export const formValidator = (name, nameValue, phoneNumberValue, formErrors, setFormErrors) => {
 
@@ -22,4 +23,14 @@ export const formValidator = (name, nameValue, phoneNumberValue, formErrors, set
         }
 
     }
+}
+
+export const handleAsyncServerNetworkError = (err, thunkAPI, showError = true) => {
+
+    if (showError) {
+        thunkAPI.dispatch(appActions.setAppError({error: err.message ? err.message : 'Some error occurred'}))
+    }
+
+    thunkAPI.dispatch(appActions.setAppStatus({status: 'failed'}))
+    return thunkAPI.rejectWithValue({errors: [err.message], fieldsErrors: undefined})
 }

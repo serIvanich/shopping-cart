@@ -6,7 +6,7 @@ const slice = createSlice({
     name: 'app',
     initialState: {
         status: 'idle',
-        error: null,
+        error: '',
     },
     reducers: {},
     extraReducers: (builder) => {

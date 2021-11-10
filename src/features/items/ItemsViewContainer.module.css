@@ -19,10 +19,6 @@
 .buttonContainer {
     width: 235px;
     height: 60px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-decoration: none;
     text-align: center;
     font-size: 24px;
     color: #50DAA8;
@@ -33,5 +29,10 @@
 
 .buttonContainer:hover {
     background-color: #50DAA8;
-    color: white;
+    color: #ffffff;
+}
+
+.buttonContainer:disabled {
+    background-color: #D3D3D3;
+    color: #F2F2F2;
 }

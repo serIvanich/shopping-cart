@@ -1,6 +1,7 @@
 import {itemsApi} from "../../api/project-api";
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {appActions} from "../common-action/app";
+import {handleAsyncServerNetworkError} from "../../utils/error-utils";
 
 
 const getItems = createAsyncThunk('items/getItems',
@@ -11,7 +12,7 @@ const getItems = createAsyncThunk('items/getItems',
             thunkAPI.dispatch(appActions.setAppStatus({status: 'success'}))
             return data
         } catch (e) {
-            return alert(e)
+            return handleAsyncServerNetworkError(e, thunkAPI)
         }
     })
 
