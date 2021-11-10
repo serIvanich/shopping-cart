@@ -1,16 +1,10 @@
 import React from "react";
 
-const Modal = (
-    {
-        enableBackground,
-        backgroundStyle,
-        closeModalOnClick ,
-        width,
-        height,
-        show,
-        children,
-    }
-) => {
+const Modal = ({
+                   enableBackground, backgroundStyle, closeModalOnClick, width,
+                   height, show, children,
+               }) => {
+
     const top = `calc(50vh - ${height / 2}px)`;
     const left = `calc(50vw - ${width / 2}px)`;
 
@@ -28,10 +22,8 @@ const Modal = (
                     background: 'black',
                     opacity: 0.35,
                     zIndex: 20,
-
                     ...backgroundStyle,
                 }}
-
             />}
             <div
                 style={{
@@ -47,7 +39,6 @@ const Modal = (
                     borderRadius: '24px',
                     background: '#FFFFFF',
                     zIndex: 21,
-
                 }}
             >
                 {children}

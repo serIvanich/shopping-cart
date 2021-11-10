@@ -1,7 +1,6 @@
 import {createSlice} from "@reduxjs/toolkit";
 import {appActions} from "../common-action/app";
 
-
 const slice = createSlice({
     name: 'app',
     initialState: {

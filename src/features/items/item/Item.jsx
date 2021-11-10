@@ -1,14 +1,15 @@
 import React from "react";
 import s from './Item.module.css'
 
-
 export const Item = ({item, show, onShowModal, isModalItems}) => {
 
     const {name, category, price} = item
-    const wordStyle = {
+
+    const textStyle = {
         fontSize: "16px",
         textTransform: 'uppercase',
     }
+
     const styleModalItems = {
         height: '180px',
         margin: '0',
@@ -17,14 +18,16 @@ export const Item = ({item, show, onShowModal, isModalItems}) => {
         justifyContent: 'space-between',
         border: 'none',
     }
+
     const styleModal = isModalItems ? styleModalItems : null
 
     const onButtonClick = () => {
         onShowModal(item)
     }
+
     return (
         <div className={s.itemBox} style={styleModal ? styleModal : {}}>
-            <div style={wordStyle}>
+            <div style={textStyle}>
                 {category}
             </div>
             <div style={{fontSize: "40px"}}>
@@ -32,7 +35,7 @@ export const Item = ({item, show, onShowModal, isModalItems}) => {
             </div>
             <div className={s.blockWithButton}>
                 <div className={s.priceBox}><span className={s.logoPrice}>$</span>{price}</div>
-                {!isModalItems && <button style={wordStyle} disabled={show} onClick={onButtonClick}>
+                {!isModalItems && <button style={textStyle} disabled={show} onClick={onButtonClick}>
                     {show ? '(=)' : 'buy'}
                 </button>}
             </div>

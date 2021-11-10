@@ -1,23 +1,18 @@
 import React from 'react'
 import s from './Input.module.css'
 
-
-const Input = (
-    {
-        type, error, name, className,
-        onChangeText, errorTextClassName, onFocusInput,
-        ...restProps
-    }
-) => {
+const Input = ({type, error, name, className, onChangeText,
+                   errorTextClassName, onFocusInput, ...restProps}) => {
 
     const finalErrorTextClassName = `${s.textError} ${errorTextClassName ? errorTextClassName : ''}`
     const finalInputClassName = `${error ? s.errorInput : s.generalInput} ${className} `
     const visibility = `${error ? 'visibility' : 'hidden'}`
-    const visibilityStyle = visibility==='visibility'? {zIndex: '20'}: null
+    const visibilityStyle = visibility === 'visibility' ? {zIndex: '20'} : null
 
     const onChangeCallback = (e) => {
         onChangeText && onChangeText(e.currentTarget.value)
     }
+
     const onClickCloseCallback = (e) => {
         const name = e.target.previousElementSibling.previousElementSibling.name
         onFocusInput(name, true)

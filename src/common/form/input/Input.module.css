@@ -9,8 +9,6 @@
     color: grey;
     font-size: 16px;
     z-index: 10;
-
-
 }
 
 .errorInput {
@@ -27,7 +25,7 @@
     position: relative;
 }
 
-.textError{
+.textError {
     position: absolute;
     bottom: -20px;
     left: 0;

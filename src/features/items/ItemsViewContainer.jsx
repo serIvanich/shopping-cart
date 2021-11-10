@@ -3,7 +3,7 @@ import {Item} from "./item/Item";
 import {useSelector} from "react-redux";
 import s from './ItemsViewContainer.module.css'
 import {Preloader} from "../../common/preloader/Preloader";
-import {asyncActions} from "./items-reducer";
+import {itemsActions} from "./items-reducer";
 import {useActions} from "../../utils/redux-utils";
 import {selectRandomItems} from "../../utils/select-random-items-utils";
 
@@ -12,7 +12,7 @@ export const ItemsViewContainer = ({show, onShowModal}) => {
     // items for views. need paginator?!
     const [itemsViews, setItemsViews] = useState([])
 
-    const {getItems} = useActions(asyncActions)
+    const {getItems} = useActions(itemsActions)
 
     useEffect(() => {
         getItems()

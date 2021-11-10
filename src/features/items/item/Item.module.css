@@ -20,16 +20,18 @@
     align-content: flex-start;
     font-size: 30px;
 }
+
 .priceBox {
     font-size: 60px;
 }
+
 .logoPrice {
     font-size: 30px;
     position: relative;
     bottom: 20px;
 }
 
-.blockWithButton button{
+.blockWithButton button {
     position: relative;
     top: 20px;
     width: 64px;
@@ -40,7 +42,7 @@
     background: #ffffff;
 }
 
-.blockWithButton button:hover{
+.blockWithButton button:hover {
     background-color: #50DAA8;
     color: white;
 }

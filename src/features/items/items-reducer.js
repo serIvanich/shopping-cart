@@ -3,7 +3,6 @@ import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {appActions} from "../common-action/app";
 import {handleAsyncServerNetworkError} from "../../utils/error-utils";
 
-
 const getItems = createAsyncThunk('items/getItems',
     async (param, thunkAPI) => {
         thunkAPI.dispatch(appActions.setAppStatus({status: 'loading'}))
@@ -16,7 +15,7 @@ const getItems = createAsyncThunk('items/getItems',
         }
     })
 
-export const asyncActions = {
+const asyncActions = {
     getItems: getItems,
 }
 
@@ -36,4 +35,7 @@ const slice = createSlice({
 })
 
 export default slice.reducer
-
+export const itemsActions = {
+    ...asyncActions,
+    ...slice.actions
+}

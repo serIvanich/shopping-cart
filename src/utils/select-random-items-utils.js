@@ -1,4 +1,3 @@
-
 export const selectRandomItems = (itemsArray, count) => {
     const copyItemsArray = [...itemsArray]
     let newItemsArray = []
