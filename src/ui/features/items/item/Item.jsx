@@ -10,23 +10,14 @@ export const Item = React.memo(({item, show, onShowModal, isModalItems}) => {
         textTransform: 'uppercase',
     }
 
-    const styleModalItems = {
-        height: '180px',
-        margin: '0',
-        paddingTop: '20px',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        border: 'none',
-    }
-
-    const styleModal = isModalItems ? styleModalItems : null
+    const styleModal = isModalItems ? s.styleModalItems : ''
 
     const onButtonClick = () => {
         onShowModal(item)
     }
 
     return (
-        <div className={s.itemBox} style={styleModal ? styleModal : {}}>
+        <div className={`${s.itemBox} ${styleModal}`} >
             <div style={textStyle}>
                 {category}
             </div>
@@ -35,7 +26,7 @@ export const Item = React.memo(({item, show, onShowModal, isModalItems}) => {
             </div>
             <div className={s.blockWithButton}>
                 <div className={s.priceBox}><span className={s.logoPrice}>$</span>{price}</div>
-                {!isModalItems && <button style={textStyle} disabled={show} onClick={onButtonClick}>
+                {!isModalItems && <button  disabled={show} onClick={onButtonClick}>
                     {show ? '(=)' : 'buy'}
                 </button>}
             </div>

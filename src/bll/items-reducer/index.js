@@ -1,4 +1,4 @@
-import * as itemsSelectors from './selectors'
+import * as itemsSelectors from '../selectors/items-selector'
 import {slice, asyncActions} from './items-reducer'
 
 const itemsReducer = slice.reducer

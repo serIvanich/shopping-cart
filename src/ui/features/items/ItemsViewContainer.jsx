@@ -3,10 +3,10 @@ import {Item} from './item/Item';
 import {useSelector} from 'react-redux';
 import s from './ItemsViewContainer.module.css'
 import {Preloader} from '../../common/preloader/Preloader';
-import {useActions} from '../../utils/redux-utils';
-import {selectRandomItems} from '../../utils/select-random-items-utils';
-import {appSelectors} from '../application';
-import {itemsActions, itemsSelectors} from './index';
+import {useActions} from '../../../utils/redux-utils';
+import {selectRandomItems} from '../../../utils/select-random-items-utils';
+import {appSelectors} from '../../../bll/app-reducer';
+import {itemsActions, itemsSelectors} from '../../../bll/items-reducer';
 
 export const ItemsViewContainer = ({show, onShowModal}) => {
 

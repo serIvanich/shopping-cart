@@ -11,6 +11,20 @@
     z-index: 10;
 }
 
+@media screen and (max-width: 500px) {
+    .generalInput {
+        width: 210px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .generalInput {
+        width: 190px;
+
+
+    }
+}
+
 .errorInput {
     width: 258px;
     height: 56px;
@@ -20,6 +34,20 @@
     border-radius: 15px;
     font-size: 16px;
 }
+@media screen and (max-width: 500px) {
+    .errorInput {
+        width: 210px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .errorInput {
+        width: 190px;
+
+
+    }
+}
+
 
 .inputContainer {
     position: relative;
