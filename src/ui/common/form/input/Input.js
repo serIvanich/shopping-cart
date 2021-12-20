@@ -1,5 +1,5 @@
 import React from 'react'
-import s from './Input.module.css'
+import s from './Input.module.scss'
 
 const Input = React.memo(({type, error, name,  onChangeText,
                     onFocusInput, ...restProps}) => {

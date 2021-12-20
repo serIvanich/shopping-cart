@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './Modal.module.css'
+import s from './Modal.module.scss'
 
 
 const Modal = React.memo(({

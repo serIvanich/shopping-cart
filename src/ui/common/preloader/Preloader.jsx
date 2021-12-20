@@ -1,6 +1,6 @@
 import React from 'react'
 import preload from '../../../assecs/image/1486.gif'
-import s from './Preloader.module.css'
+import s from './Preloader.module.scss'
 
 export const Preloader = () => {
 

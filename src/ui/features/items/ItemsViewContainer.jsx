@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {Item} from './item/Item';
 import {useSelector} from 'react-redux';
-import s from './ItemsViewContainer.module.css'
+import s from './ItemsViewContainer.module.scss'
 import {Preloader} from '../../common/preloader/Preloader';
 import {useActions} from '../../../utils/redux-utils';
 import {selectRandomItems} from '../../../utils/select-random-items-utils';
@@ -29,7 +29,7 @@ export const ItemsViewContainer = ({show, onShowModal}) => {
     }
 
     const onClickButtonCheapest = () => {
-        const cheapestItem = itemsViews.reduce((pr, c) => pr.price && pr.price < c.price ? pr : c, {})
+        const cheapestItem = itemsViews.reduce((acc, el) => acc.price && acc.price < el.price ? acc : el, {})
         onShowModal(cheapestItem)
     }
 

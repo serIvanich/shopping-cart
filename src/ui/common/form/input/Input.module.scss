@@ -1,7 +1,11 @@
-.generalInput {
+
+.inputContainer {
+  position: relative;
+
+  .generalInput {
     width: 258px;
     height: 56px;
-    padding: 0px 15px;
+    padding: 0 15px;
     border: 1px solid grey;
     outline: 3px solid white;
     border-radius: 15px;
@@ -9,58 +13,40 @@
     color: grey;
     font-size: 16px;
     z-index: 10;
-}
 
-@media screen and (max-width: 500px) {
-    .generalInput {
+    @media screen and (max-width: 500px) {
         width: 210px;
     }
-}
 
-@media screen and (max-width: 350px) {
-    .generalInput {
-        width: 190px;
-
-
+    @media screen and (max-width: 350px) {
+        width: 170px;
     }
-}
+  }
 
-.errorInput {
+  .errorInput {
     width: 258px;
     height: 56px;
-    padding: 0px 15px;
+    padding: 0 15px;
     border: 1px solid white;
     outline: 3px solid firebrick;
     border-radius: 15px;
     font-size: 16px;
-}
-@media screen and (max-width: 500px) {
-    .errorInput {
+
+    @media screen and (max-width: 500px) {
         width: 210px;
     }
-}
 
-@media screen and (max-width: 350px) {
-    .errorInput {
-        width: 190px;
-
-
+    @media screen and (max-width: 350px) {
+        width: 170px;
     }
-}
-
-
-.inputContainer {
-    position: relative;
-}
-
-.textError {
+  }
+  .textError {
     position: absolute;
     bottom: -20px;
     left: 0;
     color: #E43F3F;
-}
-
-.closeError {
+  }
+  .closeError {
     width: 30px;
     height: 30px;
     position: absolute;
@@ -72,8 +58,7 @@
     color: white;
     font-size: 20px;
     text-align: center;
+  }
+
 }
-
-
-
 

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Modal from '../../common/modal/Modal';
 import {Item} from '../items/item/Item';
-import s from './ModalBuy.module.css';
+import s from './ModalBuy.module.scss';
 import {formValidator} from '../../../utils/error-utils';
 import Input from "../../common/form/input/Input";
 
