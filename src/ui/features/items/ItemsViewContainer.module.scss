@@ -1,3 +1,5 @@
+@import '../../../common/styles/variables';
+
 .itemsViewContainer {
   min-width: 80vw;
   min-height: 93vh;
@@ -19,14 +21,14 @@
     height: 60px;
     text-align: center;
     font-size: 24px;
-    color: #50DAA8;
+    color: $buttonColorBackground1;
     border: solid 1px grey;
     border-radius: 16px;
-    background-color: #ffffff;
+    background-color: $buttonColorBackground2;
 
     &:hover {
-      background-color: #50DAA8;
-      color: #ffffff;
+      background-color: $buttonColorBackground1;
+      color: $buttonColorBackground2;
     }
 
     &:disabled {

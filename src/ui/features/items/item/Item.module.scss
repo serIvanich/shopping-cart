@@ -1,7 +1,7 @@
 
 .itemBox {
   width: 288px;
-  height: 256px;
+  min-height: 256px;
   padding: 0 32px;
   margin-left: 2vw;
   margin-bottom: 4vw;
@@ -14,10 +14,11 @@
 
   @media screen and (max-width: 500px) {
     width: 220px;
-    height: 246px;
+
   }
   @media screen and (max-width: 350px) {
     width: 170px;
+    padding-bottom: 10px;
   }
 
   .blockWithButton {
@@ -29,6 +30,9 @@
 
     .priceBox {
       font-size: 60px;
+      @media screen and (max-width: 350px) {
+        font-size: 40px;
+      }
 
       .logoPrice {
         font-size: 30px;
