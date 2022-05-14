@@ -4,6 +4,7 @@ import {ModalBuy} from '../features/modals/ModalBuy';
 import {useSelector} from 'react-redux';
 import {ErrorSnackbar} from '../common/error-snackbar/ErrorSnackbar';
 import {appSelectors} from '../../bll/app-reducer';
+import s from './App.module.scss'
 
 const App = () => {
     const appError = useSelector(appSelectors.selectorError)
@@ -17,7 +18,7 @@ const App = () => {
     }
 
     return (
-        <div>
+        <div className={s.app}>
             <ItemsViewContainer show={showModalBuy} onShowModal={onShowModal}/>
             <ModalBuy currentItem={currentItem} show={showModalBuy} setShow={setShowModalBuy}/>
             {appError && <ErrorSnackbar error={appError}/>}

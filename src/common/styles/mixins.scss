@@ -1,0 +1,18 @@
+@import '../styles/variables.scss';
+
+
+@mixin setContainer() {
+  
+}
+
+// set the object in the center of the positional parent
+@mixin setCenterForObject() {
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 3px solid $errorColor;
+    border-radius: 5px;
+    color: $errorColor;
+}

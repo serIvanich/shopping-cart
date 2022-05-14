@@ -67,7 +67,7 @@ export const ModalBuy = React.memo(({currentItem, show, setShow}) => {
 
 
     return (
-        <div>
+        <div >
             <Modal closeModalOnClick={onCloseModal} show={show}
             >
                 <div className={s.settingModal}>
