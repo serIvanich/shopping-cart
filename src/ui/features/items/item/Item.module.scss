@@ -2,7 +2,7 @@
 
 .itemBox {
   width: 288px;
-  min-height: 256px;
+  height: 256px;
   padding: 20px 10px;
   margin: 20px 15px;
   
@@ -14,11 +14,11 @@
   background: $buttonColorBackground2;
   text-transform: uppercase;
 
-  @media screen and (max-width: 500px) {
-    
+  @include screenWidth('small') {
+    height: 230px;
 
   }
-  @media screen and (max-width: 350px) {
+  @include screenWidth('mini') {
     width: 250px;
     margin: 20px 0;
    
@@ -32,10 +32,7 @@
     
     font-size: 2.8em;
     text-transform: capitalize;
-    
-    @media screen and (max-width: 350px) {
-      // font-size: 2.6em;
-    }
+
   }
 
   .blockWithButton {
@@ -47,7 +44,7 @@
 
     .priceBox {
       font-size: 4.5em;
-      @media screen and (max-width: 350px) {
+      @include screenWidth('mini') {
         font-size: 3.7em;
       }
 
@@ -84,7 +81,7 @@
 
 .styleModalItems {
   
-  height: 130px;
+  
   margin: 0;
   align-items: center;
   border: none;
@@ -93,8 +90,8 @@
     text-align: center;
   }
 
-  @media screen and (max-width: 350px) {
-    width: 230px;
+  @include screenWidth('mini') {
+    height: 220px;
     
   }
 }

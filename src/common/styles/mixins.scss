@@ -1,3 +1,4 @@
+@use 'sass:map';
 @import '../styles/variables.scss';
 
 
@@ -5,7 +6,22 @@
   
 }
 
-// set the object in the center of the positional parent
+@mixin flexDisplay($flexDirection, $justifyContent, 
+                    $alignItems: center, ) {
+    display: flex;
+    flex-direction: $flexDirection;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+}
+
+// seting elements for flex size of screen 
+@mixin screenWidth($screenWidth) {
+    @media (max-width: map.get($breakpoints, $screenWidth)) { 
+      @content
+    }
+}
+
+// seting the object in the center of the positional parent
 @mixin setCenterForObject() {
 
     position: absolute;

@@ -15,11 +15,11 @@
     font-size: 16px;
     z-index: 10;
 
-    @media screen and (max-width: 500px) {
+    @include screenWidth('small') {
         width: 210px;
     }
 
-    @media screen and (max-width: 350px) {
+    @include screenWidth('mini') {
         width: 170px;
     }
   }
@@ -33,11 +33,11 @@
     border-radius: 15px;
     font-size: 16px;
 
-    @media screen and (max-width: 500px) {
+    @include screenWidth('small') {
         width: 210px;
     }
 
-    @media screen and (max-width: 350px) {
+    @include screenWidth(mini) {
         width: 170px;
     }
   }
