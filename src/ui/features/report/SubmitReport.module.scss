@@ -1,0 +1,20 @@
+@import '../../../common/styles/mixins.scss';
+
+.reportContainer {
+  width: 100%;
+  height: 100%;
+  @include flexDisplay(column, space-evenly);
+  align-items: center;
+
+}
+
+.textReport {
+  padding: 15px;
+  font-size: 1.7em;
+  line-height: 1.1em;
+
+  span {
+    font-style: italic;
+    font-weight: 700;
+  }
+}

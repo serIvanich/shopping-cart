@@ -5,7 +5,7 @@ import s from './ModalBuy.module.scss';
 import {formValidator} from '../../../utils/error-utils';
 import Input from "../../common/form/input/Input";
 
-export const ModalBuy = React.memo(({currentItem, show, setShow}) => {
+export const ModalBuy = React.memo(({currentItem, show, setShow, setShowReport, setCurrentCustomer}) => {
 
     const [nameValue, setNameValue] = useState('')
     const [phoneNumberValue, setPhoneNumberValue] = useState('')
@@ -63,7 +63,9 @@ export const ModalBuy = React.memo(({currentItem, show, setShow}) => {
         isDisabledFormButton = true
         let valueForm = `name: ${nameValue}  tel: ${phoneNumberValue}`
         console.log(valueForm)
-        
+        setCurrentCustomer({name: nameValue, tel: phoneNumberValue})
+        setShow(false)
+        setShowReport(true)
     }
 
 

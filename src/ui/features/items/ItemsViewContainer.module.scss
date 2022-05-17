@@ -32,6 +32,7 @@
     border: solid 1px $borderItemColor;
     border-radius: 16px;
     background-color: $itemBackgroundColor;
+    cursor: pointer;
 
     &:hover {
       background-color: $buttonBackgroundColorHover;
