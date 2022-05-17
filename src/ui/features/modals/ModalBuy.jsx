@@ -63,11 +63,12 @@ export const ModalBuy = React.memo(({currentItem, show, setShow}) => {
         isDisabledFormButton = true
         let valueForm = `name: ${nameValue}  tel: ${phoneNumberValue}`
         console.log(valueForm)
+        
     }
 
 
     return (
-        <div >
+        <div>
             <Modal closeModalOnClick={onCloseModal} show={show}
             >
                 <div className={s.settingModal}>

@@ -6,11 +6,15 @@ import {ErrorSnackbar} from '../common/error-snackbar/ErrorSnackbar';
 import {appSelectors} from '../../bll/app-reducer';
 import s from './App.module.scss'
 
+
 const App = () => {
     const appError = useSelector(appSelectors.selectorError)
 
+    
     const [currentItem, setCurrentItem] = useState({})
     const [showModalBuy, setShowModalBuy] = useState(false)
+    
+
 
     const onShowModal = (item) => {
         setCurrentItem(item)
@@ -22,6 +26,7 @@ const App = () => {
             <ItemsViewContainer show={showModalBuy} onShowModal={onShowModal}/>
             <ModalBuy currentItem={currentItem} show={showModalBuy} setShow={setShowModalBuy}/>
             {appError && <ErrorSnackbar error={appError}/>}
+            
         </div>
 
     );

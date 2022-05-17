@@ -1,4 +1,5 @@
-@import '../../../../common/styles/variables';
+@import '../../../../common/styles/variables.scss';
+@import '../../../../common/styles/mixins.scss';
 
 .itemBox {
   width: 288px;
@@ -6,19 +7,17 @@
   padding: 20px 10px;
   margin: 20px 15px;
   
-  border: solid 1px gray;
+  border: solid 1px $borderItemColor;
   border-radius: 24px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background: $buttonColorBackground2;
+  @include flexDisplay(column, space-between);
+  background: $itemBackgroundColor;
   text-transform: uppercase;
 
-  @include screenWidth('small') {
+  @include maxScreenWidth('small') {
     height: 230px;
 
   }
-  @include screenWidth('mini') {
+  @include maxScreenWidth('mini') {
     width: 250px;
     margin: 20px 0;
    
@@ -29,30 +28,25 @@
   }
 
   .setTitle {
-    
     font-size: 2.8em;
     text-transform: capitalize;
 
   }
 
   .blockWithButton {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    @include flexDisplay(row, space-between);
     align-content: flex-start;
     
 
     .priceBox {
       font-size: 4.5em;
-      @include screenWidth('mini') {
+      @include maxScreenWidth('mini') {
         font-size: 3.7em;
       }
 
       .logoPrice {
         position: relative;
         bottom: 20px;
-       
-
         font-size: 0.5em;
       }
 
@@ -64,15 +58,15 @@
       width: 64px;
       height: 56px;
       border-radius: 14px;
-      color: $buttonColorBackground1;
-      background: $buttonColorBackground2;
+      color: $buttonColor;
+      background: $itemBackgroundColor;
       font-size: 1.2em;
       text-transform: uppercase;
 
 
       &:hover {
-        background-color: $buttonColorBackground1;
-        color: white;
+        background-color: $buttonBackgroundColorHover;
+        color: $buttonColorHover;
       }
     }
   }
@@ -90,7 +84,7 @@
     text-align: center;
   }
 
-  @include screenWidth('mini') {
+  @include maxScreenWidth('mini') {
     height: 220px;
     
   }

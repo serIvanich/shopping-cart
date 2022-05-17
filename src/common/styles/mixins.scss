@@ -1,4 +1,4 @@
-@use 'sass:map';
+@use "sass:map";
 @import '../styles/variables.scss';
 
 
@@ -6,20 +6,18 @@
   
 }
 
-@mixin flexDisplay($flexDirection, $justifyContent, 
-                    $alignItems: center, ) {
+@mixin flexDisplay($flexDirection, $justifyContent: '',) {
     display: flex;
     flex-direction: $flexDirection;
     justify-content: $justifyContent;
-    align-items: $alignItems;
-}
+};
 
 // seting elements for flex size of screen 
-@mixin screenWidth($screenWidth) {
-    @media (max-width: map.get($breakpoints, $screenWidth)) { 
+@mixin maxScreenWidth($breakpoint) {
+    @media (max-width: (map.get($breakpoints, $breakpoint))) { 
       @content
     }
-}
+};
 
 // seting the object in the center of the positional parent
 @mixin setCenterForObject() {
@@ -31,4 +29,4 @@
     border: 3px solid $errorColor;
     border-radius: 5px;
     color: $errorColor;
-}
+};

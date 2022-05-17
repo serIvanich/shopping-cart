@@ -1,7 +1,9 @@
+@import '../../common/styles/mixins.scss';
+@import '../../common/styles/variables.scss';
 
 .app {
   width: 100wh;
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
+  @include flexDisplay(row, center);
+  background-color: $sideFieldsColor;
 }

@@ -1,46 +1,46 @@
-@import '../../../common/styles/variables';
+@import '../../../common/styles/variables.scss';
+@import '../../../common/styles/mixins.scss';
 
 .itemsViewContainer {
   width: 80%;
-  display: flex;
-  flex-direction: column;
+  @include flexDisplay(column);
   align-items: center;
-  // border: 1px solid grey;
-  background: #F2F2F2;
+  background: $mainBackgroundColor;
 
-  @include screenWidth('small') {
+  @include maxScreenWidth('small') {
     width: 100%;
   }
 
   .itemsBlock {
     display: flex;
+    @include flexDisplay(row, center);
     flex-wrap: wrap;
-    justify-content: center;
     padding-top: 70px;
 
-    @include screenWidth('small') {
+    @include maxScreenWidth('small') {
       padding-top: 30px;
     }
   }
+
   .buttonContainer {
     width: 235px;
     height: 60px;
     margin-bottom: 20px;
     text-align: center;
     font-size: 1.4em;
-    color: $buttonColorBackground1;
-    border: solid 1px grey;
+    color: $buttonColor;
+    border: solid 1px $borderItemColor;
     border-radius: 16px;
-    background-color: $buttonColorBackground2;
+    background-color: $itemBackgroundColor;
 
     &:hover {
-      background-color: $buttonColorBackground1;
-      color: $buttonColorBackground2;
+      background-color: $buttonBackgroundColorHover;
+      color: $buttonColorHover;
     }
 
     &:disabled {
-      background-color: #D3D3D3;
-      color: #F2F2F2;
+      background-color: $mainBackgroundColor;
+      color: $itemBackgroundColor;
     }
 
   }
