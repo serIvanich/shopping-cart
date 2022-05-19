@@ -1,11 +1,7 @@
 @use "sass:map";
 @import '../styles/variables.scss';
 
-
-@mixin setContainer() {
-  
-}
-
+// template display: flex
 @mixin flexDisplay($flexDirection, $justifyContent: '',) {
     display: flex;
     flex-direction: $flexDirection;
@@ -21,7 +17,6 @@
 
 // seting the object in the center of the positional parent
 @mixin setCenterForObject() {
-
     position: absolute;
     top: 50%;
     left: 50%;
@@ -42,4 +37,4 @@
     @include flexDisplay(row, center);
     align-items: center;
     z-index: 21;
-}
+};

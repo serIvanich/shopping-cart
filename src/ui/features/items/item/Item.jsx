@@ -25,7 +25,7 @@ export const Item = React.memo(({item, show, onShowModal, isModalItems}) => {
                     {price}
                 </div>
                 {!isModalItems && <button  disabled={show} onClick={onButtonClick}>
-                    {show ? '(=)' : 'buy'}
+                    {show ? ':_:' : 'buy'}
                 </button>}
             </div>
         </div>

@@ -69,8 +69,7 @@ export const ModalBuy = React.memo(({currentItem, show, setShow, setShowReport, 
     }
 
 
-    return (
-        <div>
+    return <>
             <Modal closeModalOnClick={onCloseModal} show={show}
             >
                 <div className={s.settingModal}>
@@ -94,6 +93,6 @@ export const ModalBuy = React.memo(({currentItem, show, setShow, setShowReport, 
                     </form>
                 </div>
             </Modal>
-        </div>
-    )
+        </>
+    
 })

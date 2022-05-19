@@ -15,12 +15,11 @@
 
   @include maxScreenWidth('small') {
     height: 230px;
-
   }
+
   @include maxScreenWidth('mini') {
     width: 250px;
     margin: 20px 0;
-   
   }
 
   .setCategory {
@@ -30,14 +29,12 @@
   .setTitle {
     font-size: 2.8em;
     text-transform: capitalize;
-
   }
 
   .blockWithButton {
     @include flexDisplay(row, space-between);
     align-content: flex-start;
     
-
     .priceBox {
       font-size: 4.5em;
       @include maxScreenWidth('mini') {
@@ -49,7 +46,6 @@
         bottom: 20px;
         font-size: 0.5em;
       }
-
     }
 
     button {
@@ -64,7 +60,6 @@
       text-transform: uppercase;
       cursor: pointer;
 
-
       &:hover {
         background-color: $buttonBackgroundColorHover;
         color: $buttonColorHover;
@@ -76,7 +71,6 @@
 
 .styleModalItems {
   
-  
   margin: 0;
   align-items: center;
   border: none;
@@ -87,7 +81,6 @@
 
   @include maxScreenWidth('mini') {
     height: 220px;
-    
   }
 }
 

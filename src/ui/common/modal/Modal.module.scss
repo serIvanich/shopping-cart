@@ -19,8 +19,7 @@
     }
 
     @include maxScreenWidth('mini') {
-      width: 270px;
-     
+      width: 270px; 
     }
 
     .closeButton {
