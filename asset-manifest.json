@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/test-hlt/static/css/main.cb0a88de.chunk.css",
-    "main.js": "/test-hlt/static/js/main.de33e0e8.chunk.js",
-    "main.js.map": "/test-hlt/static/js/main.de33e0e8.chunk.js.map",
-    "runtime-main.js": "/test-hlt/static/js/runtime-main.cfffbcb3.js",
-    "runtime-main.js.map": "/test-hlt/static/js/runtime-main.cfffbcb3.js.map",
-    "static/js/2.82abc0cc.chunk.js": "/test-hlt/static/js/2.82abc0cc.chunk.js",
-    "static/js/2.82abc0cc.chunk.js.map": "/test-hlt/static/js/2.82abc0cc.chunk.js.map",
-    "static/js/3.86c92b3c.chunk.js": "/test-hlt/static/js/3.86c92b3c.chunk.js",
-    "static/js/3.86c92b3c.chunk.js.map": "/test-hlt/static/js/3.86c92b3c.chunk.js.map",
-    "index.html": "/test-hlt/index.html",
-    "static/css/main.cb0a88de.chunk.css.map": "/test-hlt/static/css/main.cb0a88de.chunk.css.map",
-    "static/js/2.82abc0cc.chunk.js.LICENSE.txt": "/test-hlt/static/js/2.82abc0cc.chunk.js.LICENSE.txt",
-    "static/media/1486.279ed7ee.gif": "/test-hlt/static/media/1486.279ed7ee.gif"
+    "main.css": "/shopping-cart/static/css/main.72a32756.chunk.css",
+    "main.js": "/shopping-cart/static/js/main.5cbe4e96.chunk.js",
+    "main.js.map": "/shopping-cart/static/js/main.5cbe4e96.chunk.js.map",
+    "runtime-main.js": "/shopping-cart/static/js/runtime-main.87174323.js",
+    "runtime-main.js.map": "/shopping-cart/static/js/runtime-main.87174323.js.map",
+    "static/js/2.c8c606fd.chunk.js": "/shopping-cart/static/js/2.c8c606fd.chunk.js",
+    "static/js/2.c8c606fd.chunk.js.map": "/shopping-cart/static/js/2.c8c606fd.chunk.js.map",
+    "static/js/3.9cedaf2f.chunk.js": "/shopping-cart/static/js/3.9cedaf2f.chunk.js",
+    "static/js/3.9cedaf2f.chunk.js.map": "/shopping-cart/static/js/3.9cedaf2f.chunk.js.map",
+    "index.html": "/shopping-cart/index.html",
+    "static/css/main.72a32756.chunk.css.map": "/shopping-cart/static/css/main.72a32756.chunk.css.map",
+    "static/js/2.c8c606fd.chunk.js.LICENSE.txt": "/shopping-cart/static/js/2.c8c606fd.chunk.js.LICENSE.txt",
+    "static/media/1486.279ed7ee.gif": "/shopping-cart/static/media/1486.279ed7ee.gif"
   },
   "entrypoints": [
-    "static/js/runtime-main.cfffbcb3.js",
-    "static/js/2.82abc0cc.chunk.js",
-    "static/css/main.cb0a88de.chunk.css",
-    "static/js/main.de33e0e8.chunk.js"
+    "static/js/runtime-main.87174323.js",
+    "static/js/2.c8c606fd.chunk.js",
+    "static/css/main.72a32756.chunk.css",
+    "static/js/main.5cbe4e96.chunk.js"
   ]
 }
