@@ -1,6 +1,6 @@
 {
-  "name": "test-hlt",
-  "homepage": "https://serIvanich.github.io/test-hlt",
+  "name": "shopping-cart",
+  "homepage": "https://serIvanich.github.io/shopping-cart",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
