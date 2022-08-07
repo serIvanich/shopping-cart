@@ -1,2 +1,1 @@
-
-export const selectorItems = state => state.items.itemsArray
+export const selectorItems = (state) => state.items.itemsArray

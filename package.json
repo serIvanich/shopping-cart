@@ -11,8 +11,8 @@
     "@types/sass": "^1.43.1",
     "@types/sass-loader": "^8.0.3",
     "axios": "^0.24.0",
+    "babel-eslint": "^10.1.0",
     "formik": "^2.2.9",
-    "node-sass": "4.14.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.6",
@@ -20,7 +20,7 @@
     "react-scripts": "4.0.3",
     "redux": "^4.1.2",
     "redux-thunk": "^2.4.0",
-    "sass": "^1.51.0",
+    "sass": "^1.54.0",
     "sass-loader": "^12.6.0",
     "uuid": "^8.3.2",
     "web-vitals": "^1.0.1"
@@ -31,7 +31,11 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "lint": "eslint --fix .",
+    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
+    "postinstall": "husky install && cd app && yarn install",
+    "pre-commit": "lint-staged"
   },
   "eslintConfig": {
     "extends": [
@@ -51,7 +55,31 @@
       "last 1 safari version"
     ]
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.+(js|jsx)": [
+      "eslint --fix",
+      "prettier --write --ignore-unknown"
+    ],
+    "*.+(json|css|md)": [
+      "prettier --write"
+    ]
+  },
   "devDependencies": {
-    "gh-pages": "^3.2.3"
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "gh-pages": "^3.2.3",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1"
   }
 }

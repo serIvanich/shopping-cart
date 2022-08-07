@@ -1,16 +1,14 @@
-
 $mainBackgroundColor: #dadada;
 $sideFieldsColor: #f3f3f3;
 $itemBackgroundColor: #fafafa;
 $borderItemColor: #666666;
-$buttonColor: #50DAA8;
+$buttonColor: #50daa8;
 $buttonColorHover: $itemBackgroundColor;
 $buttonBackgroundColorHover: $buttonColor;
-$errorColor: #E43F3F;
+$errorColor: #e43f3f;
 
 $breakpoints: (
   strech: 1020px,
   small: 500px,
-  mini: 350px,
-)
-
+  mini: 350px
+);

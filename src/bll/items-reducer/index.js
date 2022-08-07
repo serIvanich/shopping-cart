@@ -1,16 +1,11 @@
 import * as itemsSelectors from '../selectors/items-selector'
-import {slice, asyncActions} from './items-reducer'
+import { slice, asyncActions } from './items-reducer'
 
 const itemsReducer = slice.reducer
 
 const itemsActions = {
-    ...asyncActions,
-    ...slice.actions
+  ...asyncActions,
+  ...slice.actions,
 }
 
-export {
-    itemsSelectors,
-    itemsReducer,
-    itemsActions,
-}
-
+export { itemsSelectors, itemsReducer, itemsActions }
