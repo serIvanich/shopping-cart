@@ -1,8 +1,7 @@
 @import '../../../common/styles/mixins.scss';
 
 .preloaderContainer {
-    
-    @include setCenterForObject();
-   
-    opacity: 0.5;
-};
+  @include setCenterForObject();
+
+  opacity: 0.5;
+}

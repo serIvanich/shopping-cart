@@ -8,8 +8,10 @@ const Modal = React.memo(({ closeModalOnClick, show, children }) => {
     <div className={s.modalContainer}>
       <div className={s.modalBox}>
         {children}
-        <div className={s.closeButton} onClick={closeModalOnClick}>
-          x
+        <div className={s.closeButton}>
+          <button type='button' onClick={closeModalOnClick}>
+            x
+          </button>
         </div>
       </div>
     </div>

@@ -6,7 +6,6 @@
   height: 100%;
   @include flexDisplay(column);
   align-items: center;
-  
 
   .settingModalForm {
     padding-top: 10px;
@@ -14,11 +13,9 @@
     align-items: center;
 
     .inputBox {
-     
       height: 145px;
       @include flexDisplay(column, space-between);
       margin-bottom: 40px;
- 
     }
     .buttonFormSubmit {
       width: 280px;
@@ -46,11 +43,4 @@
       }
     }
   }
-
 }
-
-
-
-
-
-

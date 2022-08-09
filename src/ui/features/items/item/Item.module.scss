@@ -6,7 +6,7 @@
   height: 256px;
   padding: 20px 10px;
   margin: 20px 15px;
-  
+
   border: solid 1px $borderItemColor;
   border-radius: 24px;
   @include flexDisplay(column, space-between);
@@ -34,7 +34,7 @@
   .blockWithButton {
     @include flexDisplay(row, space-between);
     align-content: flex-start;
-    
+
     .priceBox {
       font-size: 4.5em;
       @include maxScreenWidth('mini') {
@@ -66,11 +66,9 @@
       }
     }
   }
-
 }
 
 .styleModalItems {
-  
   margin: 0;
   align-items: center;
   border: none;
@@ -83,5 +81,3 @@
     height: 220px;
   }
 }
-
-

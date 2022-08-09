@@ -1,9 +1,7 @@
 @import '../../../common/styles/variables.scss';
 @import '../../../common/styles/mixins.scss';
 
-
 .modalContainer {
-
   @include setModalContainer();
 
   .modalBox {
@@ -19,7 +17,7 @@
     }
 
     @include maxScreenWidth('mini') {
-      width: 270px; 
+      width: 270px;
     }
 
     .closeButton {
@@ -33,10 +31,12 @@
       font-size: 20px;
       background-color: $itemBackgroundColor;
       z-index: 22;
-      cursor: pointer;
+
+      button {
+        border: none;
+        background-color: $itemBackgroundColor;
+        cursor: pointer;
+      }
     }
   }
 }
-
-
-

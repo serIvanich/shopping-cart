@@ -4,7 +4,7 @@ export const selectRandomItems = (itemsArray, count) => {
   let i = 0
 
   const getRandomInd = (max) => {
-    Math.floor(Math.random() * max)
+    return Math.floor(Math.random() * max)
   }
 
   if (count > 0 < itemsArray.length) {

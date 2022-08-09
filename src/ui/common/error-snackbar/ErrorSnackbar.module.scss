@@ -2,9 +2,8 @@
 @import '../../../common/styles/mixins.scss';
 
 .styleSnackbar {
-
-    @include setCenterForObject();
-    padding: 30px;
-    top: 30%;
-    font-size: 2em;
+  @include setCenterForObject();
+  padding: 30px;
+  top: 30%;
+  font-size: 2em;
 }
